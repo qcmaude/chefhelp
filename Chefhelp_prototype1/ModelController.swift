@@ -21,13 +21,17 @@ import UIKit
 class ModelController: NSObject, UIPageViewControllerDataSource {
 
 	var pageData = NSArray()
-
-
+	var recipes: [Recipe] = [Recipe]()
+	
 	override init() {
 	    super.init()
 		// Create the data model.
 		let dateFormatter = NSDateFormatter()
 		pageData = dateFormatter.monthSymbols
+		
+		// Fill in the array with hard-coded recipes
+//		let baseRecipe: Recipe = Recipe(recipeName: <#String#>, ingredients: <#[Ingredient]#>, steps: <#[Step]#>, totalTime: <#Int#>, difficulty: <#String#>)
+//		recipes.append(baseRecipe)
 	}
 
 	func viewControllerAtIndex(index: Int, storyboard: UIStoryboard) -> DataViewController? {

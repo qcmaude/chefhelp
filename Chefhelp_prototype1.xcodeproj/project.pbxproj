@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4375481619F456F900A9E71D /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4375481519F456F900A9E71D /* Recipe.swift */; };
+		4375481819F457A600A9E71D /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4375481719F457A600A9E71D /* Ingredient.swift */; };
+		4375481D19F45A8E00A9E71D /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4375481C19F45A8E00A9E71D /* Step.swift */; };
 		439A938C19F420F60081CAF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439A938B19F420F60081CAF0 /* AppDelegate.swift */; };
 		439A938E19F420F60081CAF0 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439A938D19F420F60081CAF0 /* RootViewController.swift */; };
 		439A939019F420F60081CAF0 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439A938F19F420F60081CAF0 /* DataViewController.swift */; };
@@ -28,6 +31,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4375481519F456F900A9E71D /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		4375481719F457A600A9E71D /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		4375481C19F45A8E00A9E71D /* Step.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		439A938619F420F60081CAF0 /* Chefhelp_prototype1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chefhelp_prototype1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		439A938A19F420F60081CAF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		439A938B19F420F60081CAF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +91,9 @@
 				439A938D19F420F60081CAF0 /* RootViewController.swift */,
 				439A938F19F420F60081CAF0 /* DataViewController.swift */,
 				439A939119F420F60081CAF0 /* ModelController.swift */,
+				4375481719F457A600A9E71D /* Ingredient.swift */,
+				4375481519F456F900A9E71D /* Recipe.swift */,
+				4375481C19F45A8E00A9E71D /* Step.swift */,
 				439A939319F420F60081CAF0 /* Main.storyboard */,
 				439A939619F420F60081CAF0 /* Images.xcassets */,
 				439A939819F420F60081CAF0 /* LaunchScreen.xib */,
@@ -220,8 +229,11 @@
 			files = (
 				439A938E19F420F60081CAF0 /* RootViewController.swift in Sources */,
 				439A939219F420F60081CAF0 /* ModelController.swift in Sources */,
+				4375481819F457A600A9E71D /* Ingredient.swift in Sources */,
+				4375481D19F45A8E00A9E71D /* Step.swift in Sources */,
 				439A939019F420F60081CAF0 /* DataViewController.swift in Sources */,
 				439A938C19F420F60081CAF0 /* AppDelegate.swift in Sources */,
+				4375481619F456F900A9E71D /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +427,7 @@
 				439A93AB19F420F60081CAF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		439A93AC19F420F60081CAF0 /* Build configuration list for PBXNativeTarget "Chefhelp_prototype1Tests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +436,7 @@
 				439A93AE19F420F60081CAF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
