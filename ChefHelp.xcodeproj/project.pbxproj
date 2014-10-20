@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43128DA019F4B2640093F6CB /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43128D9B19F4B2640093F6CB /* Group.swift */; };
+		43128DA119F4B2640093F6CB /* GroupProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43128D9C19F4B2640093F6CB /* GroupProtocol.swift */; };
+		43128DA219F4B2640093F6CB /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43128D9D19F4B2640093F6CB /* Ingredient.swift */; };
+		43128DA319F4B2640093F6CB /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43128D9E19F4B2640093F6CB /* Recipe.swift */; };
+		43128DA419F4B2640093F6CB /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43128D9F19F4B2640093F6CB /* Step.swift */; };
 		9D649B9919F47753003474B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D649B9819F47753003474B6 /* AppDelegate.swift */; };
 		9D649B9B19F47753003474B6 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D649B9A19F47753003474B6 /* MasterViewController.swift */; };
 		9D649B9D19F47753003474B6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D649B9C19F47753003474B6 /* DetailViewController.swift */; };
@@ -27,6 +32,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		43128D9B19F4B2640093F6CB /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		43128D9C19F4B2640093F6CB /* GroupProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupProtocol.swift; sourceTree = "<group>"; };
+		43128D9D19F4B2640093F6CB /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		43128D9E19F4B2640093F6CB /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		43128D9F19F4B2640093F6CB /* Step.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		9D649B9319F47753003474B6 /* ChefHelp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChefHelp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D649B9719F47753003474B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D649B9819F47753003474B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +89,11 @@
 		9D649B9519F47753003474B6 /* ChefHelp */ = {
 			isa = PBXGroup;
 			children = (
+				43128D9B19F4B2640093F6CB /* Group.swift */,
+				43128D9C19F4B2640093F6CB /* GroupProtocol.swift */,
+				43128D9D19F4B2640093F6CB /* Ingredient.swift */,
+				43128D9E19F4B2640093F6CB /* Recipe.swift */,
+				43128D9F19F4B2640093F6CB /* Step.swift */,
 				9D649B9819F47753003474B6 /* AppDelegate.swift */,
 				9D649B9A19F47753003474B6 /* MasterViewController.swift */,
 				9D649B9C19F47753003474B6 /* DetailViewController.swift */,
@@ -215,9 +230,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43128DA019F4B2640093F6CB /* Group.swift in Sources */,
+				43128DA319F4B2640093F6CB /* Recipe.swift in Sources */,
 				9D649B9D19F47753003474B6 /* DetailViewController.swift in Sources */,
+				43128DA119F4B2640093F6CB /* GroupProtocol.swift in Sources */,
 				9D649B9B19F47753003474B6 /* MasterViewController.swift in Sources */,
 				9D649B9919F47753003474B6 /* AppDelegate.swift in Sources */,
+				43128DA419F4B2640093F6CB /* Step.swift in Sources */,
+				43128DA219F4B2640093F6CB /* Ingredient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +431,7 @@
 				9D649BB619F47753003474B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9D649BB719F47753003474B6 /* Build configuration list for PBXNativeTarget "ChefHelpTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +440,7 @@
 				9D649BB919F47753003474B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
