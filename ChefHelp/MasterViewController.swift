@@ -23,16 +23,9 @@ class MasterViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        // No buttons!
-//        self.navigationItem.leftBarButtonItem = self.editButtonItem()
-
-//        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
-//        self.navigationItem.rightBarButtonItem = addButton
-        
+        feedRecipes()
         let controllers = self.splitViewController!.viewControllers
         self.detailViewController = controllers[controllers.count-1].topViewController as? DetailViewController
-        feedRecipes()
     }
     
     func feedRecipes() {
@@ -47,15 +40,6 @@ class MasterViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func insertNewObject(sender: AnyObject) {
-        let dateFormatter = NSDateFormatter();
-        dateFormatter.dateFormat = "yyy-MM-dd 'at' h:mm a"
-        let str = dateFormatter.stringFromDate(NSDate())
-        objects.insert(str, atIndex: 0)
-        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-        self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-    }
-
     // MARK: - Segues
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -67,6 +51,9 @@ class MasterViewController: UITableViewController {
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
+        }
+        if segue.identifier == "startCooking" {
+            println("WOOOOo")
         }
     }
 
@@ -82,8 +69,9 @@ class MasterViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
-
+        
         let object = objects[indexPath.row] as NSString
+        println(object.description)
         cell.textLabel?.text = object.description
         return cell
     }
