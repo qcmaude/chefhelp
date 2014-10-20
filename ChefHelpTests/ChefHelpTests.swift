@@ -1,15 +1,15 @@
 //
-//  Chefhelp_prototype1Tests.swift
-//  Chefhelp_prototype1Tests
+//  ChefHelpTests.swift
+//  ChefHelpTests
 //
-//  Created by Benjamin San Soucie on 10/19/14.
-//  Copyright (c) 2014 personal. All rights reserved.
+//  Created by Maude on 10/19/14.
+//  Copyright (c) 2014 Maude. All rights reserved.
 //
 
 import UIKit
 import XCTest
 
-class Chefhelp_prototype1Tests: XCTestCase {
+class ChefHelpTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
