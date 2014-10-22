@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D4AD51919F81F04001C084A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D4AD51819F81F04001C084A /* Images.xcassets */; };
 		9D649B9919F47753003474B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D649B9819F47753003474B6 /* AppDelegate.swift */; };
 		9D649B9B19F47753003474B6 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D649B9A19F47753003474B6 /* MasterViewController.swift */; };
 		9D649B9D19F47753003474B6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D649B9C19F47753003474B6 /* DetailViewController.swift */; };
 		9D649BA019F47753003474B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D649B9E19F47753003474B6 /* Main.storyboard */; };
-		9D649BA219F47753003474B6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D649BA119F47753003474B6 /* Images.xcassets */; };
 		9D649BA519F47753003474B6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D649BA319F47753003474B6 /* LaunchScreen.xib */; };
 		9D649BB119F47753003474B6 /* ChefHelpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D649BB019F47753003474B6 /* ChefHelpTests.swift */; };
+		9DC00BC819F6D02900B9E92B /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC00BC719F6D02900B9E92B /* DataViewController.swift */; };
+		9DC00BCA19F6D04A00B9E92B /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC00BC919F6D04A00B9E92B /* RootViewController.swift */; };
+		9DC00BCE19F6D0A000B9E92B /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC00BCD19F6D0A000B9E92B /* ModelController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,17 +30,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9D4AD51819F81F04001C084A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9D649B9319F47753003474B6 /* ChefHelp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChefHelp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D649B9719F47753003474B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D649B9819F47753003474B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D649B9A19F47753003474B6 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		9D649B9C19F47753003474B6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9D649B9F19F47753003474B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9D649BA119F47753003474B6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9D649BA419F47753003474B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		9D649BAA19F47753003474B6 /* ChefHelpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChefHelpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D649BAF19F47753003474B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D649BB019F47753003474B6 /* ChefHelpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChefHelpTests.swift; sourceTree = "<group>"; };
+		9DC00BC719F6D02900B9E92B /* DataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		9DC00BC919F6D04A00B9E92B /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		9DC00BCD19F6D0A000B9E92B /* ModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,13 +85,16 @@
 		9D649B9519F47753003474B6 /* ChefHelp */ = {
 			isa = PBXGroup;
 			children = (
+				9D4AD51819F81F04001C084A /* Images.xcassets */,
 				9D649B9819F47753003474B6 /* AppDelegate.swift */,
 				9D649B9A19F47753003474B6 /* MasterViewController.swift */,
 				9D649B9C19F47753003474B6 /* DetailViewController.swift */,
 				9D649B9E19F47753003474B6 /* Main.storyboard */,
-				9D649BA119F47753003474B6 /* Images.xcassets */,
 				9D649BA319F47753003474B6 /* LaunchScreen.xib */,
 				9D649B9619F47753003474B6 /* Supporting Files */,
+				9DC00BC719F6D02900B9E92B /* DataViewController.swift */,
+				9DC00BC919F6D04A00B9E92B /* RootViewController.swift */,
+				9DC00BCD19F6D0A000B9E92B /* ModelController.swift */,
 			);
 			path = ChefHelp;
 			sourceTree = "<group>";
@@ -195,9 +204,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D4AD51919F81F04001C084A /* Images.xcassets in Resources */,
 				9D649BA019F47753003474B6 /* Main.storyboard in Resources */,
 				9D649BA519F47753003474B6 /* LaunchScreen.xib in Resources */,
-				9D649BA219F47753003474B6 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,7 +224,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DC00BCA19F6D04A00B9E92B /* RootViewController.swift in Sources */,
+				9DC00BC819F6D02900B9E92B /* DataViewController.swift in Sources */,
 				9D649B9D19F47753003474B6 /* DetailViewController.swift in Sources */,
+				9DC00BCE19F6D0A000B9E92B /* ModelController.swift in Sources */,
 				9D649B9B19F47753003474B6 /* MasterViewController.swift in Sources */,
 				9D649B9919F47753003474B6 /* AppDelegate.swift in Sources */,
 			);
@@ -411,6 +423,7 @@
 				9D649BB619F47753003474B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9D649BB719F47753003474B6 /* Build configuration list for PBXNativeTarget "ChefHelpTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +432,7 @@
 				9D649BB919F47753003474B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
