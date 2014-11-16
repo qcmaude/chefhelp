@@ -8,10 +8,16 @@
 
 import UIKit
 
-class RootViewController: UIPageViewController, UIPageViewControllerDelegate {
-    
+class RootViewController: UIPageViewController, UIPageViewControllerDelegate, NanogestGestureDelegate, NanogestErrorDelegate {
     var pageViewController: UIPageViewController?
+    var ngest: Nanogest
     
+    required init(coder aDecoder: NSCoder) {
+        self.ngest = Nanogest.alloc()
+        super.init(coder: aDecoder)
+        self.ngest.gestureDelegate = self
+        self.ngest.errorDelegate = self
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +39,12 @@ class RootViewController: UIPageViewController, UIPageViewControllerDelegate {
 //        var pageViewRect = self.view.bounds
 //        pageViewRect = CGRectInset(pageViewRect, 40.0, 40.0)
 //        self.pageViewController!.view.frame = pageViewRect
-		
         self.pageViewController!.didMoveToParentViewController(self)
+        
+        self.ngest.start()
+
+        print("Nanogest should be initialized")
+        print(self.ngest.description)
         
         // Add the page view controller's gesture recognizers to the book view controller's view so that the gestures are started more easily.
         self.view.gestureRecognizers = self.pageViewController!.gestureRecognizers
@@ -55,6 +65,37 @@ class RootViewController: UIPageViewController, UIPageViewControllerDelegate {
     }
     
     var _modelController: ModelController? = nil
+    
+    func onGesture(gesture: NanogestKind, timestamp: NSTimeInterval) {
+
+        print("Detected a gesture");
+        
+        switch (gesture.value) {
+            case NANOGEST_SWIPE_LEFT.value:
+                flashLabel("Left");
+                break;
+            case NANOGEST_SWIPE_RIGHT.value:
+                flashLabel("Right");
+                break;
+            case NANOGEST_SWIPE_UP.value:
+                flashLabel("Up");
+                break;
+            case NANOGEST_SWIPE_DOWN.value:
+                flashLabel("Down");
+                break;
+            case NANOGEST_HELLO.value:
+                flashLabel("Hello");
+                break;
+            default:
+                // Ignore other gestures.
+                break;
+        }
+    }
+    
+    func flashLabel(text: NSString) {
+        print(text)
+    }
+
     
     // MARK: - UIPageViewController delegate methods
     
@@ -84,6 +125,10 @@ class RootViewController: UIPageViewController, UIPageViewControllerDelegate {
         self.pageViewController!.setViewControllers(viewControllers, direction: .Forward, animated: true, completion: {done in })
         
         return .Mid
+    }
+    
+    func onError(code: NanogestError, codeName: String!, message: String!) {
+        //do nothing
     }
     
     

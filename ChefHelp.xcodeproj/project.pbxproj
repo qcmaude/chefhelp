@@ -28,6 +28,8 @@
 		9D649BA019F47753003474B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D649B9E19F47753003474B6 /* Main.storyboard */; };
 		9D649BA519F47753003474B6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D649BA319F47753003474B6 /* LaunchScreen.xib */; };
 		9D649BB119F47753003474B6 /* ChefHelpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D649BB019F47753003474B6 /* ChefHelpTests.swift */; };
+		9DA047961A193F4E00B78006 /* ChefHelp-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 9DA047951A193F4E00B78006 /* ChefHelp-Bridging-Header.h */; };
+		9DA047971A193FFB00B78006 /* Nanogest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE7AADD1A1920F9003F8F09 /* Nanogest.framework */; };
 		9DC00BC819F6D02900B9E92B /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC00BC719F6D02900B9E92B /* DataViewController.swift */; };
 		9DC00BCA19F6D04A00B9E92B /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC00BC919F6D04A00B9E92B /* RootViewController.swift */; };
 		9DC00BCE19F6D0A000B9E92B /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC00BCD19F6D0A000B9E92B /* ModelController.swift */; };
@@ -69,9 +71,11 @@
 		9D649BAA19F47753003474B6 /* ChefHelpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChefHelpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D649BAF19F47753003474B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D649BB019F47753003474B6 /* ChefHelpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChefHelpTests.swift; sourceTree = "<group>"; };
+		9DA047951A193F4E00B78006 /* ChefHelp-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ChefHelp-Bridging-Header.h"; sourceTree = "<group>"; };
 		9DC00BC719F6D02900B9E92B /* DataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		9DC00BC919F6D04A00B9E92B /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		9DC00BCD19F6D0A000B9E92B /* ModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
+		9DE7AADD1A1920F9003F8F09 /* Nanogest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nanogest.framework; path = ../../Nanogest.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DA047971A193FFB00B78006 /* Nanogest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +111,7 @@
 		9D649B8A19F47753003474B6 = {
 			isa = PBXGroup;
 			children = (
+				9DE7AADD1A1920F9003F8F09 /* Nanogest.framework */,
 				9D649B9519F47753003474B6 /* ChefHelp */,
 				9D649BAD19F47753003474B6 /* ChefHelpTests */,
 				9D649B9419F47753003474B6 /* Products */,
@@ -145,6 +151,7 @@
 				9DC00BC719F6D02900B9E92B /* DataViewController.swift */,
 				9DC00BC919F6D04A00B9E92B /* RootViewController.swift */,
 				9DC00BCD19F6D0A000B9E92B /* ModelController.swift */,
+				9DA047951A193F4E00B78006 /* ChefHelp-Bridging-Header.h */,
 			);
 			path = ChefHelp;
 			sourceTree = "<group>";
@@ -223,6 +230,7 @@
 				TargetAttributes = {
 					9D649B9219F47753003474B6 = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = ERBF75N77R;
 					};
 					9D649BA919F47753003474B6 = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -282,6 +290,7 @@
 				9DC00BCA19F6D04A00B9E92B /* RootViewController.swift in Sources */,
 				9DC00BC819F6D02900B9E92B /* DataViewController.swift in Sources */,
 				43A0CF0519F85F2D008556C5 /* AppDelegate.swift in Sources */,
+				9DA047961A193F4E00B78006 /* ChefHelp-Bridging-Header.h in Sources */,
 				43A0CF0119F85DDE008556C5 /* Recipe.swift in Sources */,
 				43A0CF0C19F8A5AA008556C5 /* CustomIngredientCell.swift in Sources */,
 				43A0CF0E19F8A5D8008556C5 /* CustomStepCell.swift in Sources */,
@@ -352,6 +361,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -418,9 +428,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Maude/Desktop/ECSE,
+					424,
+					/Users/Maude/Desktop/ECSE,
+					424,
+				);
 				INFOPLIST_FILE = ChefHelp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ChefHelp/ChefHelp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -428,9 +449,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Maude/Desktop/ECSE,
+					424,
+					/Users/Maude/Desktop/ECSE,
+					424,
+				);
 				INFOPLIST_FILE = ChefHelp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ChefHelp/ChefHelp-Bridging-Header.h";
 			};
 			name = Release;
 		};

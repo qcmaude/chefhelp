@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -22,7 +23,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDr-xJ-lwt">
                         <rect key="frame" x="212" y="11" width="100" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="100" id="Efo-wE-3y9"/>
+                            <constraint firstAttribute="width" constant="100" id="zLy-CK-iIV"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -30,10 +31,12 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="gDr-xJ-lwt" firstAttribute="baseline" secondItem="cBF-ya-rBf" secondAttribute="baseline" id="Al6-rK-up3"/>
-                    <constraint firstItem="gDr-xJ-lwt" firstAttribute="centerY" secondItem="MYQ-bb-EEW" secondAttribute="centerY" id="CDT-ly-nxU"/>
-                    <constraint firstItem="gDr-xJ-lwt" firstAttribute="trailing" secondItem="MYQ-bb-EEW" secondAttribute="trailingMargin" id="Zay-yQ-bkQ"/>
-                    <constraint firstItem="cBF-ya-rBf" firstAttribute="leading" secondItem="MYQ-bb-EEW" secondAttribute="leadingMargin" id="aaZ-DW-01L"/>
+                    <constraint firstItem="gDr-xJ-lwt" firstAttribute="trailing" secondItem="MYQ-bb-EEW" secondAttribute="trailingMargin" id="7MM-fr-6Fu"/>
+                    <constraint firstItem="cBF-ya-rBf" firstAttribute="leading" secondItem="MYQ-bb-EEW" secondAttribute="leadingMargin" id="Day-wt-r3Q"/>
+                    <constraint firstItem="cBF-ya-rBf" firstAttribute="top" secondItem="MYQ-bb-EEW" secondAttribute="topMargin" constant="3" id="IHB-V7-Cor"/>
+                    <constraint firstItem="gDr-xJ-lwt" firstAttribute="centerY" secondItem="MYQ-bb-EEW" secondAttribute="centerY" id="c8W-Nq-E9f"/>
+                    <constraint firstItem="gDr-xJ-lwt" firstAttribute="baseline" secondItem="cBF-ya-rBf" secondAttribute="baseline" id="ljH-G4-zGY"/>
+                    <constraint firstItem="gDr-xJ-lwt" firstAttribute="firstBaseline" secondItem="cBF-ya-rBf" secondAttribute="firstBaseline" id="rlh-Y1-Jox"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

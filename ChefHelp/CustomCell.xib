@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -15,39 +16,41 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Kf-wd-YQV">
                         <rect key="frame" x="8" y="13" width="79" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="79" id="C98-jP-dGZ"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blh-vY-pZt">
                         <rect key="frame" x="196" y="13" width="200" height="19"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="200" id="qmu-1v-TWj"/>
-                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vcz-lc-HMD">
                         <rect key="frame" x="102" y="13" width="79" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="79" id="phr-GQ-pfl"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="0Kf-wd-YQV" firstAttribute="centerY" secondItem="rCn-Nb-RPa" secondAttribute="centerY" id="2ec-Z0-cWK"/>
                     <constraint firstItem="blh-vY-pZt" firstAttribute="leading" secondItem="Vcz-lc-HMD" secondAttribute="trailing" id="9Sf-53-59N"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="Vcz-lc-HMD" secondAttribute="bottom" constant="5" id="BnE-yV-Umf"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="blh-vY-pZt" secondAttribute="bottom" constant="3" id="Dhn-sU-wRB"/>
-                    <constraint firstItem="blh-vY-pZt" firstAttribute="leading" secondItem="Vcz-lc-HMD" secondAttribute="trailing" constant="15" id="Xp1-fa-Vb0"/>
-                    <constraint firstItem="Vcz-lc-HMD" firstAttribute="leading" secondItem="0Kf-wd-YQV" secondAttribute="trailing" constant="15" id="ek5-UG-OFY"/>
-                    <constraint firstItem="Vcz-lc-HMD" firstAttribute="top" secondItem="rCn-Nb-RPa" secondAttribute="topMargin" constant="5" id="j3J-to-hDy"/>
-                    <constraint firstItem="blh-vY-pZt" firstAttribute="top" secondItem="rCn-Nb-RPa" secondAttribute="topMargin" constant="5" id="jrn-JN-UZr"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="0Kf-wd-YQV" secondAttribute="bottom" constant="5" id="mlE-Tb-JO1"/>
-                    <constraint firstItem="0Kf-wd-YQV" firstAttribute="leading" secondItem="rCn-Nb-RPa" secondAttribute="leadingMargin" id="peG-am-xS3"/>
-                    <constraint firstItem="0Kf-wd-YQV" firstAttribute="top" secondItem="rCn-Nb-RPa" secondAttribute="topMargin" constant="5" id="uyR-Pr-AEG"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="blh-vY-pZt" secondAttribute="trailing" id="vcx-TN-FUt"/>
-                    <constraint firstItem="0Kf-wd-YQV" firstAttribute="width" secondItem="Vcz-lc-HMD" secondAttribute="width" id="yHS-RQ-dGQ"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="blh-vY-pZt" secondAttribute="bottom" constant="3.5" id="9Su-uc-5k5"/>
+                    <constraint firstItem="0Kf-wd-YQV" firstAttribute="leading" secondItem="rCn-Nb-RPa" secondAttribute="leadingMargin" id="Dg8-T0-TgR"/>
+                    <constraint firstItem="blh-vY-pZt" firstAttribute="leading" secondItem="Vcz-lc-HMD" secondAttribute="trailing" constant="15" id="H6V-AN-yQ2"/>
+                    <constraint firstItem="blh-vY-pZt" firstAttribute="firstBaseline" secondItem="Vcz-lc-HMD" secondAttribute="firstBaseline" id="H9F-HE-qBn"/>
+                    <constraint firstItem="blh-vY-pZt" firstAttribute="trailing" secondItem="rCn-Nb-RPa" secondAttribute="trailingMargin" id="Jea-w8-pzk"/>
+                    <constraint firstItem="Vcz-lc-HMD" firstAttribute="leading" secondItem="0Kf-wd-YQV" secondAttribute="trailing" constant="15" id="OCr-2l-AxY"/>
+                    <constraint firstItem="0Kf-wd-YQV" firstAttribute="baseline" secondItem="Vcz-lc-HMD" secondAttribute="baseline" id="cgb-OA-18D"/>
+                    <constraint firstItem="Vcz-lc-HMD" firstAttribute="firstBaseline" secondItem="0Kf-wd-YQV" secondAttribute="firstBaseline" id="rCB-MX-5Ft"/>
+                    <constraint firstItem="0Kf-wd-YQV" firstAttribute="top" secondItem="rCn-Nb-RPa" secondAttribute="topMargin" constant="5" id="vP9-pb-aTt"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">

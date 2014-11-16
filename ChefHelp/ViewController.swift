@@ -135,11 +135,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		case self.table:
 			var cell:CustomRecipeCell = self.table.dequeueReusableCellWithIdentifier("recipes") as CustomRecipeCell
 			if let r = self.selectedRecipe? {
-				if(r == self.allRecipes[indexPath.row]) {
-					cell.backgroundColor = UIColor.blueColor()
-				} else {
-					cell.backgroundColor = UIColor.whiteColor()
-				}
+//				if(r == self.allRecipes[indexPath.row]) {
+//					cell.backgroundColor = UIColor.blueColor()
+//				} else {
+//					cell.backgroundColor = UIColor.whiteColor()
+//				}
 			}
 			
 			cell.name?.text = self.allRecipes[indexPath.row].name
