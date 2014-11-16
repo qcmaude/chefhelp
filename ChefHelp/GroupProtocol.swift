@@ -8,5 +8,5 @@
 
 import Foundation
 
-// This enables us to have 
-protocol GroupProtocol {}
+protocol GroupProtocol {
+}

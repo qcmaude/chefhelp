@@ -9,19 +9,23 @@
 import Foundation
 
 class Ingredient: GroupProtocol {
-	let name: String
 	let attributes: String
 	let importance: Importance
 	let quantity: Float
 	let unit: Unit
+	let name: String
 	
 	init(name: String, attributes: String, importance: Importance, quantity: Float, unit: Unit) {
+		self.unit = unit
 		self.name = name
 		self.attributes = attributes
 		self.importance = importance
 		self.quantity = quantity
-		self.unit = unit
 	}
+}
+
+func ==(lhs: Ingredient, rhs: Ingredient) -> Bool {
+	return lhs.name == rhs.name
 }
 
 enum Importance: String {

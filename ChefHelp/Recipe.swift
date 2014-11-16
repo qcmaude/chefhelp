@@ -9,14 +9,14 @@
 import Foundation
 
 struct Recipe {
-	let recipeName: String
+	let name: String
 	let ingredients: [GroupProtocol] // ingredients list can contain groups or ingredients
 	let steps: [GroupProtocol]
 	let difficulty: Difficulty
 	let totalTime: Int
 	
-	init(recipeName: String, ingredients: [GroupProtocol], steps: [GroupProtocol], difficulty: Difficulty) {
-		self.recipeName = recipeName
+	init(name: String, ingredients: [GroupProtocol], steps: [GroupProtocol], difficulty: Difficulty) {
+		self.name = name
 		self.ingredients = ingredients
 		self.steps = steps
 		self.difficulty = difficulty

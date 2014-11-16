@@ -9,14 +9,14 @@
 import Foundation
 
 class Step: GroupProtocol {
-	let goal: String
+	let name: String
 	let ingredientsNeeded: [GroupProtocol]
 	let time: Int
 	let explanation: String
 	let timers: [Int]
 	
-	init(goal: String, ingredientsNeeded: [GroupProtocol], time: Int, explanation: String, timers: [Int]) {
-		self.goal = goal
+	init(name: String, ingredientsNeeded: [GroupProtocol], time: Int, explanation: String, timers: [Int]) {
+		self.name = name
 		self.ingredientsNeeded = ingredientsNeeded
 		self.time = time
 		self.explanation = explanation

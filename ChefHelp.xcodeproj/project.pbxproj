@@ -7,16 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-<<<<<<< HEAD
-		43128DA019F4B2640093F6CB /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43128D9B19F4B2640093F6CB /* Group.swift */; };
-		43128DA119F4B2640093F6CB /* GroupProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43128D9C19F4B2640093F6CB /* GroupProtocol.swift */; };
-		43128DA219F4B2640093F6CB /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43128D9D19F4B2640093F6CB /* Ingredient.swift */; };
-		43128DA319F4B2640093F6CB /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43128D9E19F4B2640093F6CB /* Recipe.swift */; };
-		43128DA419F4B2640093F6CB /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43128D9F19F4B2640093F6CB /* Step.swift */; };
-=======
+		43A0CEFA19F85DDE008556C5 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A0CEF019F85DDE008556C5 /* CustomCell.swift */; };
+		43A0CEFB19F85DDE008556C5 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43A0CEF119F85DDE008556C5 /* CustomCell.xib */; };
+		43A0CEFC19F85DDE008556C5 /* CustomRecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A0CEF219F85DDE008556C5 /* CustomRecipeCell.swift */; };
+		43A0CEFD19F85DDE008556C5 /* CustomRecipeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43A0CEF319F85DDE008556C5 /* CustomRecipeCell.xib */; };
+		43A0CEFE19F85DDE008556C5 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A0CEF419F85DDE008556C5 /* Group.swift */; };
+		43A0CEFF19F85DDE008556C5 /* GroupProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A0CEF519F85DDE008556C5 /* GroupProtocol.swift */; };
+		43A0CF0019F85DDE008556C5 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A0CEF619F85DDE008556C5 /* Ingredient.swift */; };
+		43A0CF0119F85DDE008556C5 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A0CEF719F85DDE008556C5 /* Recipe.swift */; };
+		43A0CF0219F85DDE008556C5 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A0CEF819F85DDE008556C5 /* Step.swift */; };
+		43A0CF0319F85DDE008556C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A0CEF919F85DDE008556C5 /* ViewController.swift */; };
+		43A0CF0519F85F2D008556C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A0CF0419F85F2D008556C5 /* AppDelegate.swift */; };
+		43A0CF0719F8A544008556C5 /* CustomStepCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43A0CF0619F8A544008556C5 /* CustomStepCell.xib */; };
+		43A0CF0A19F8A579008556C5 /* CustomIngredientCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43A0CF0919F8A579008556C5 /* CustomIngredientCell.xib */; };
+		43A0CF0C19F8A5AA008556C5 /* CustomIngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A0CF0B19F8A5AA008556C5 /* CustomIngredientCell.swift */; };
+		43A0CF0E19F8A5D8008556C5 /* CustomStepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A0CF0D19F8A5D8008556C5 /* CustomStepCell.swift */; };
 		9D4AD51919F81F04001C084A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D4AD51819F81F04001C084A /* Images.xcassets */; };
->>>>>>> 917bddb1c6a9802a36a032c7d10b813a417d1c5d
-		9D649B9919F47753003474B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D649B9819F47753003474B6 /* AppDelegate.swift */; };
 		9D649B9B19F47753003474B6 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D649B9A19F47753003474B6 /* MasterViewController.swift */; };
 		9D649B9D19F47753003474B6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D649B9C19F47753003474B6 /* DetailViewController.swift */; };
 		9D649BA019F47753003474B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D649B9E19F47753003474B6 /* Main.storyboard */; };
@@ -38,18 +44,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-<<<<<<< HEAD
-		43128D9B19F4B2640093F6CB /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
-		43128D9C19F4B2640093F6CB /* GroupProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupProtocol.swift; sourceTree = "<group>"; };
-		43128D9D19F4B2640093F6CB /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
-		43128D9E19F4B2640093F6CB /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
-		43128D9F19F4B2640093F6CB /* Step.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
-=======
+		43A0CEF019F85DDE008556C5 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		43A0CEF119F85DDE008556C5 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		43A0CEF219F85DDE008556C5 /* CustomRecipeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRecipeCell.swift; sourceTree = "<group>"; };
+		43A0CEF319F85DDE008556C5 /* CustomRecipeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomRecipeCell.xib; sourceTree = "<group>"; };
+		43A0CEF419F85DDE008556C5 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		43A0CEF519F85DDE008556C5 /* GroupProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupProtocol.swift; sourceTree = "<group>"; };
+		43A0CEF619F85DDE008556C5 /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		43A0CEF719F85DDE008556C5 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		43A0CEF819F85DDE008556C5 /* Step.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
+		43A0CEF919F85DDE008556C5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		43A0CF0419F85F2D008556C5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		43A0CF0619F8A544008556C5 /* CustomStepCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomStepCell.xib; sourceTree = "<group>"; };
+		43A0CF0919F8A579008556C5 /* CustomIngredientCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomIngredientCell.xib; sourceTree = "<group>"; };
+		43A0CF0B19F8A5AA008556C5 /* CustomIngredientCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomIngredientCell.swift; sourceTree = "<group>"; };
+		43A0CF0D19F8A5D8008556C5 /* CustomStepCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomStepCell.swift; sourceTree = "<group>"; };
 		9D4AD51819F81F04001C084A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
->>>>>>> 917bddb1c6a9802a36a032c7d10b813a417d1c5d
 		9D649B9319F47753003474B6 /* ChefHelp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChefHelp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D649B9719F47753003474B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9D649B9819F47753003474B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D649B9A19F47753003474B6 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		9D649B9C19F47753003474B6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9D649B9F19F47753003474B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,6 +92,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43A0CF0819F8A55A008556C5 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				43A0CEF119F85DDE008556C5 /* CustomCell.xib */,
+				43A0CEF319F85DDE008556C5 /* CustomRecipeCell.xib */,
+				43A0CF0619F8A544008556C5 /* CustomStepCell.xib */,
+				43A0CF0919F8A579008556C5 /* CustomIngredientCell.xib */,
+			);
+			name = CustomCells;
+			sourceTree = "<group>";
+		};
 		9D649B8A19F47753003474B6 = {
 			isa = PBXGroup;
 			children = (
@@ -101,16 +124,19 @@
 		9D649B9519F47753003474B6 /* ChefHelp */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-				43128D9B19F4B2640093F6CB /* Group.swift */,
-				43128D9C19F4B2640093F6CB /* GroupProtocol.swift */,
-				43128D9D19F4B2640093F6CB /* Ingredient.swift */,
-				43128D9E19F4B2640093F6CB /* Recipe.swift */,
-				43128D9F19F4B2640093F6CB /* Step.swift */,
-=======
+				43A0CF0819F8A55A008556C5 /* CustomCells */,
+				43A0CEF019F85DDE008556C5 /* CustomCell.swift */,
+				43A0CEF219F85DDE008556C5 /* CustomRecipeCell.swift */,
+				43A0CF0B19F8A5AA008556C5 /* CustomIngredientCell.swift */,
+				43A0CF0D19F8A5D8008556C5 /* CustomStepCell.swift */,
+				43A0CF0419F85F2D008556C5 /* AppDelegate.swift */,
+				43A0CEF419F85DDE008556C5 /* Group.swift */,
+				43A0CEF519F85DDE008556C5 /* GroupProtocol.swift */,
+				43A0CEF619F85DDE008556C5 /* Ingredient.swift */,
+				43A0CEF719F85DDE008556C5 /* Recipe.swift */,
+				43A0CEF819F85DDE008556C5 /* Step.swift */,
+				43A0CEF919F85DDE008556C5 /* ViewController.swift */,
 				9D4AD51819F81F04001C084A /* Images.xcassets */,
->>>>>>> 917bddb1c6a9802a36a032c7d10b813a417d1c5d
-				9D649B9819F47753003474B6 /* AppDelegate.swift */,
 				9D649B9A19F47753003474B6 /* MasterViewController.swift */,
 				9D649B9C19F47753003474B6 /* DetailViewController.swift */,
 				9D649B9E19F47753003474B6 /* Main.storyboard */,
@@ -228,9 +254,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43A0CEFD19F85DDE008556C5 /* CustomRecipeCell.xib in Resources */,
 				9D4AD51919F81F04001C084A /* Images.xcassets in Resources */,
 				9D649BA019F47753003474B6 /* Main.storyboard in Resources */,
+				43A0CEFB19F85DDE008556C5 /* CustomCell.xib in Resources */,
+				43A0CF0719F8A544008556C5 /* CustomStepCell.xib in Resources */,
 				9D649BA519F47753003474B6 /* LaunchScreen.xib in Resources */,
+				43A0CF0A19F8A579008556C5 /* CustomIngredientCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,21 +278,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
-				43128DA019F4B2640093F6CB /* Group.swift in Sources */,
-				43128DA319F4B2640093F6CB /* Recipe.swift in Sources */,
-				9D649B9D19F47753003474B6 /* DetailViewController.swift in Sources */,
-				43128DA119F4B2640093F6CB /* GroupProtocol.swift in Sources */,
-=======
+				43A0CEFE19F85DDE008556C5 /* Group.swift in Sources */,
 				9DC00BCA19F6D04A00B9E92B /* RootViewController.swift in Sources */,
 				9DC00BC819F6D02900B9E92B /* DataViewController.swift in Sources */,
+				43A0CF0519F85F2D008556C5 /* AppDelegate.swift in Sources */,
+				43A0CF0119F85DDE008556C5 /* Recipe.swift in Sources */,
+				43A0CF0C19F8A5AA008556C5 /* CustomIngredientCell.swift in Sources */,
+				43A0CF0E19F8A5D8008556C5 /* CustomStepCell.swift in Sources */,
+				43A0CF0319F85DDE008556C5 /* ViewController.swift in Sources */,
 				9D649B9D19F47753003474B6 /* DetailViewController.swift in Sources */,
 				9DC00BCE19F6D0A000B9E92B /* ModelController.swift in Sources */,
->>>>>>> 917bddb1c6a9802a36a032c7d10b813a417d1c5d
+				43A0CEFF19F85DDE008556C5 /* GroupProtocol.swift in Sources */,
+				43A0CEFC19F85DDE008556C5 /* CustomRecipeCell.swift in Sources */,
 				9D649B9B19F47753003474B6 /* MasterViewController.swift in Sources */,
-				9D649B9919F47753003474B6 /* AppDelegate.swift in Sources */,
-				43128DA419F4B2640093F6CB /* Step.swift in Sources */,
-				43128DA219F4B2640093F6CB /* Ingredient.swift in Sources */,
+				43A0CEFA19F85DDE008556C5 /* CustomCell.swift in Sources */,
+				43A0CF0219F85DDE008556C5 /* Step.swift in Sources */,
+				43A0CF0019F85DDE008556C5 /* Ingredient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

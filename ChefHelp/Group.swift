@@ -17,3 +17,7 @@ class Group: GroupProtocol {
 		self.rest = rest
 	}
 }
+
+func ==(lhs: Group, rhs: Group) -> Bool {
+	return lhs.name == rhs.name
+}

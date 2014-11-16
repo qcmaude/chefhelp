@@ -1,31 +1,59 @@
 //
-//  ModelController.swift
-//  ChefHelp
+//  ViewController.swift
+//  iChef
 //
-//  Created by Maude on 10/20/14.
-//  Copyright (c) 2014 Maude. All rights reserved.
+//  Created by Benjamin San Soucie on 10/20/14.
+//  Copyright (c) 2014 personal. All rights reserved.
 //
 
 import UIKit
 
-/*
-A controller object that manages a simple model -- a collection of month names.
-
-The controller serves as the data source for the page view controller; it therefore implements pageViewController:viewControllerBeforeViewController: and pageViewController:viewControllerAfterViewController:.
-It also implements a custom method, viewControllerAtIndex: which is useful in the implementation of the data source methods, and in the initial configuration of the application.
-
-There is no need to actually create view controllers for each page in advance -- indeed doing so incurs unnecessary overhead. Given the data model, these methods create, configure, and return a new view controller on demand.
-*/
-
-
-class ModelController: NSObject, UIPageViewControllerDataSource {
-	var allSteps: [Group] = []
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+	@IBOutlet weak var table: UITableView!
+	@IBOutlet weak var allIngredients: UITableView!
+	@IBOutlet weak var recipeTile: UILabel!
 	
-    override init() {
-        super.init()
-
+	var allRecipes: [Recipe] = []
+	var selectedRecipeIngredients: [Ingredient] = []
+	var selectedRecipe: Recipe?
+	
+	override init() {
+		super.init()
 		self.loadData()
-    }
+	}
+
+	required init(coder aDecoder: NSCoder) {
+		super.init(coder: aDecoder)
+		self.loadData()
+	}
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		self.allIngredients.registerNib(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "ingredients")
+		self.table.registerNib(UINib(nibName: "CustomRecipeCell", bundle: nil), forCellReuseIdentifier: "recipes")
+
+		self.table.dataSource = self
+		self.table.delegate = self
+		
+		self.allIngredients.dataSource = self
+		
+		self.setDefaults()
+		
+		self.table.reloadData()
+	}
+
+	override func didReceiveMemoryWarning() {
+		super.didReceiveMemoryWarning()
+		// Dispose of any resources		that can be recreated.
+	}
+	
+	func setDefaults() {
+		self.selectedRecipe = self.allRecipes[0]
+		self.selectedRecipeIngredients = self.generateIngredientList(self.selectedRecipe!)
+		self.recipeTile.text = self.selectedRecipe!.name
+	}
+	
 	func loadData() {
 		let flour: Ingredient = Ingredient(name: "flour", attributes: "all-purpose", importance: Importance.MainIngredient, quantity: 2, unit: Unit.Cup)
 		let bakingPowder: Ingredient = Ingredient(name: "baking powder", attributes: "", importance: Importance.MainIngredient, quantity: 2, unit: Unit.TeaSpoon)
@@ -85,64 +113,101 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
 			Step(name: "SPREAD", ingredientsNeeded: [icingGroup, cakeGroup], time: 1, explanation: "spread the whole mix on the top of the cake", timers: [])
 			])
 		
-//		let carrotCakeRecipe: Recipe = Recipe(name: "Carrot Cake", ingredients: [cakeGroup, icingGroup], steps: [step1, step2, step3, step4],difficulty: Difficulty.Moderate)
-		
-		self.allSteps.append(step1)
-		self.allSteps.append(step2)
-		self.allSteps.append(step3)
-		self.allSteps.append(step4)
-	}
-    
-    func viewControllerAtIndex(index: Int, storyboard: UIStoryboard) -> DataViewController? {
-        // Return the data view controller for the given index.
-        if (self.allSteps.count == 0) || (index >= self.allSteps.count) {
-            return nil
-        }
-        
-        // Create a new view controller and pass suitable data.
-        let dataViewController = storyboard.instantiateViewControllerWithIdentifier("DataViewController") as DataViewController
-        dataViewController.step = self.allSteps[index]
-        return dataViewController
-    }
-    
-    func indexOfViewController(viewController: DataViewController) -> Int {
-        // Return the index of the given data view controller.
-        // For simplicity, this implementation uses a static array of model objects and the view controller stores the model object; you can therefore use the model object to identify the index.
+		let carrotCakeRecipe: Recipe = Recipe(name: "Carrot Cake", ingredients: [cakeGroup, icingGroup], steps: [step1, step2, step3, step4],difficulty: Difficulty.Moderate)
 
-		if let step: Group = viewController.step {
-			for (i, r) in enumerate(self.allSteps) {
-				if r == step { return i; }
-			}
-            return NSNotFound
-        } else {
-            return NSNotFound
-        }
-    }
-    
-    // MARK: - Page View Controller Data Source
-    
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        var index = self.indexOfViewController(viewController as DataViewController)
-        if (index == 0) || (index == NSNotFound) {
-            return nil
-        }
+		self.allRecipes.append(carrotCakeRecipe)
+	}
+	
+	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		if tableView == self.allIngredients {
+			return self.selectedRecipeIngredients.count
+		}
 		
-        index--
-        return self.viewControllerAtIndex(index, storyboard: viewController.storyboard!)
-    }
-    
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        var index = self.indexOfViewController(viewController as DataViewController)
-        if index == NSNotFound {
-            return nil
-        }
-        
-        index++
-        if index == self.allSteps.count {
-            return nil
-        }
-        return self.viewControllerAtIndex(index, storyboard: viewController.storyboard!)
-    }
-    
+		if tableView == self.table {
+			return self.allRecipes.count
+		}
+		
+		return 0
+	}
+	
+	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+		switch tableView {
+		case self.table:
+			var cell:CustomRecipeCell = self.table.dequeueReusableCellWithIdentifier("recipes") as CustomRecipeCell
+			if let r = self.selectedRecipe? {
+				if(r == self.allRecipes[indexPath.row]) {
+					cell.backgroundColor = UIColor.blueColor()
+				} else {
+					cell.backgroundColor = UIColor.whiteColor()
+				}
+			}
+			
+			cell.name?.text = self.allRecipes[indexPath.row].name
+			cell.time?.text = "\(self.getTime(self.allRecipes[indexPath.row])) min"
+			return cell
+		default:
+			var cell:CustomCell = self.allIngredients.dequeueReusableCellWithIdentifier("ingredients") as CustomCell
+			
+			cell.name?.text = self.selectedRecipeIngredients[indexPath.row].name
+			cell.quantity?.text = "\(self.selectedRecipeIngredients[indexPath.row].quantity) " + self.selectedRecipeIngredients[indexPath.row].unit.rawValue
+			cell.attributes?.text = self.selectedRecipeIngredients[indexPath.row].attributes
+			return cell
+		}
+	}
+
+	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+		var cell:CustomRecipeCell = self.table.dequeueReusableCellWithIdentifier("recipes") as CustomRecipeCell
+		self.selectedRecipeIngredients = self.generateIngredientList(self.allRecipes[indexPath.item])
+		self.recipeTile.text = self.allRecipes[indexPath.item].name
+		self.allIngredients.reloadData()
+		self.table.reloadData()
+//		let recipeSelected: Recipe = self.allRecipes[indexPath.item]
+//		let ingredients: [Ingredient] = self.generateIngredientList(recipeSelected)
+//		
+//		recipeTile.text = recipeSelected.name
+		
+//		for ingredient in ingredients {
+//			var ingredientCell:CustomCell = self.allIngredients.dequeueReusableCellWithIdentifier("ingredients") as CustomCell
+//			ingredientCell.name?.text = ingredient.name
+//			ingredientCell.quantity?.text = "\(ingredient.quantity)" + ingredient.unit.toRaw()
+//			ingredientCell.attributes?.text = ingredient.attributes
+//			self.allIngredients.addSubview(ingredientCell)
+//		}
+	}
+	
+	func getTime(recipe: Recipe) -> Int {
+		var total: Int = 0
+		var todo: [GroupProtocol] = recipe.steps
+		
+		while todo.count > 0 {
+			let step = todo.removeLast()
+			if let s = step as? Step  {
+				total += s.time
+			} else if let g = step as? Group {
+				for part in g.rest {
+					todo.insert(part, atIndex: 0)
+				}
+			}
+		}
+		return total
+
+	}
+	
+	func generateIngredientList(recipe: Recipe) -> [Ingredient] {
+		var allIngredients: [Ingredient] = []
+		var todo: [GroupProtocol] = recipe.ingredients
+		
+		while todo.count > 0 {
+			let ing = todo.removeLast()
+			if let i = ing as? Ingredient  {
+				allIngredients.append(i)
+			} else if let g = ing as? Group {
+				for part in g.rest {
+					todo.insert(part, atIndex: 0)
+				}
+			}
+		}
+		return allIngredients
+	}
 }
 
