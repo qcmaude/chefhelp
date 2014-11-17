@@ -25,9 +25,9 @@ class DataViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
 		
 		self.ingredientsNeeded.registerNib(UINib(nibName: "CustomIngredientCell", bundle: nil), forCellReuseIdentifier: "ingredientsNeeded")
-		
+		self.ingredientsNeeded.rowHeight = 40
 		self.stepsTodo.registerNib(UINib(nibName: "CustomStepCell", bundle: nil), forCellReuseIdentifier: "substeps")
-		stepsTodo.rowHeight = 70
+		self.stepsTodo.rowHeight = 70
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -109,7 +109,7 @@ class DataViewController: UIViewController, UITableViewDataSource {
 			let ingredient = self.ingredients![indexPath.item]
 			cell.name?.text = ingredient.name
 			cell.quantity?.text = "\(ingredient.quantity) " + ingredient.unit.rawValue
-			println(ingredient.color.description)
+
 			cell.backgroundColor = ingredient.color
 			return cell
 		}
@@ -119,7 +119,8 @@ class DataViewController: UIViewController, UITableViewDataSource {
 		cell.name?.text = substep.name
 		cell.explanation?.text = substep.explanation
 		cell.time?.text = "\(substep.time) min"
-		cell.color.backgroundColor = substep.color
+		cell.color1.backgroundColor = substep.color1
+		cell.color2.backgroundColor = substep.color2
 		return cell
 	}
 }
