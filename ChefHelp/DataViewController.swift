@@ -15,7 +15,12 @@ class DataViewController: UIViewController, UITableViewDataSource {
 	@IBOutlet weak var ingredientsNeeded: UITableView!
 	@IBOutlet weak var stepsTodo: UITableView!
 	@IBOutlet weak var stepName: UILabel!
-	
+    @IBOutlet weak var backOverview: UIButton!
+//    @IBOutlet weak var swipeRight: UILabel!
+//    @IBOutlet weak var swipeLeft: UILabel!
+    @IBOutlet weak var swipeRight: UILabel!
+    @IBOutlet weak var swipeLeft: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 		
@@ -34,6 +39,16 @@ class DataViewController: UIViewController, UITableViewDataSource {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 		self.stepName.text = self.step!.name
+        if(step!.name == "Step 4") {
+            swipeLeft.text = ""
+        } else {
+            swipeLeft.text = "Swipe left for next step"
+        }
+        if(step!.name == "Step 1") {
+            swipeRight.text = ""
+        } else {
+            swipeRight.text = "Swipe right for previous step"
+        }
 		self.ingredients = self.getAllIngredientsNeeded(self.step!.rest)
     }
 	

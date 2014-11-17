@@ -33,19 +33,13 @@
                         </userGuides>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step #" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuU-Xa-Un8">
-                                <rect key="frame" x="16" y="79" width="51" height="26"/>
+                                <rect key="frame" x="16" y="79" width="50.5" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="HDj-JY-vGS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe left for next step" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HmL-o0-Y0a">
-                                <rect key="frame" x="758" y="55" width="220" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="highlightedColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="page-right-flip" translatesAutoresizingMaskIntoConstraints="NO" id="5KJ-9z-Eb9">
                                 <rect key="frame" x="936" y="0.0" width="88" height="55"/>
@@ -84,8 +78,14 @@
                                     <outlet property="dataSource" destination="zZc-Vz-EhY" id="ANd-f1-klb"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe right for previous step" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qca-eU-8Bd">
-                                <rect key="frame" x="46" y="55" width="220" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="swipeLeft" text="Swipe left for next step" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HmL-o0-Y0a" userLabel="swipeLeft">
+                                <rect key="frame" x="758" y="50" width="220" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="swipeRight" text="Swipe right for previous step" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qca-eU-8Bd" userLabel="swipeRight">
+                                <rect key="frame" x="46" y="50" width="220" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="hVr-s2-2Aa"/>
                                     <constraint firstAttribute="width" constant="220" id="pWd-6c-fAB"/>
@@ -94,6 +94,18 @@
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fel-66-85B">
+                                <rect key="frame" x="453" y="41" width="138" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="contentEdgeInsets" minX="2" minY="0.0" maxX="2" maxY="0.0"/>
+                                <state key="normal" title="Back to Overview">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="QgQ-8d-ENR" kind="show" id="geU-Fe-7hH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -105,7 +117,7 @@
                             <constraint firstItem="HmL-o0-Y0a" firstAttribute="height" secondItem="Qca-eU-8Bd" secondAttribute="height" id="ZDT-4a-KmS"/>
                             <constraint firstItem="fuU-Xa-Un8" firstAttribute="top" secondItem="BYA-Uz-khP" secondAttribute="bottom" constant="59" id="aTg-Zz-B5B"/>
                             <constraint firstItem="Y14-vr-8WE" firstAttribute="leading" secondItem="mkF-FV-d7h" secondAttribute="leading" id="fqR-Ok-5GS"/>
-                            <constraint firstItem="Qca-eU-8Bd" firstAttribute="top" secondItem="BYA-Uz-khP" secondAttribute="bottom" constant="35" id="hl3-R8-HLa"/>
+                            <constraint firstItem="Qca-eU-8Bd" firstAttribute="top" secondItem="BYA-Uz-khP" secondAttribute="bottom" constant="30" id="hl3-R8-HLa"/>
                             <constraint firstItem="5KJ-9z-Eb9" firstAttribute="top" secondItem="mkF-FV-d7h" secondAttribute="top" id="hyW-7p-1a8"/>
                             <constraint firstItem="fuU-Xa-Un8" firstAttribute="leading" secondItem="mkF-FV-d7h" secondAttribute="leading" constant="16" id="hzo-j6-FeR"/>
                             <constraint firstItem="HmL-o0-Y0a" firstAttribute="width" secondItem="Qca-eU-8Bd" secondAttribute="width" id="jpG-JI-0Y0"/>
@@ -113,7 +125,7 @@
                             <constraint firstAttribute="trailing" secondItem="5KJ-9z-Eb9" secondAttribute="trailing" id="msU-4f-yu9"/>
                             <constraint firstAttribute="trailing" secondItem="2ic-9M-p6E" secondAttribute="trailing" constant="16" id="pvx-Lf-Z0g"/>
                             <constraint firstItem="Y14-vr-8WE" firstAttribute="top" secondItem="mkF-FV-d7h" secondAttribute="top" id="qhc-QS-Es0"/>
-                            <constraint firstItem="HmL-o0-Y0a" firstAttribute="top" secondItem="BYA-Uz-khP" secondAttribute="bottom" constant="35" id="s15-7D-PPM"/>
+                            <constraint firstItem="HmL-o0-Y0a" firstAttribute="top" secondItem="BYA-Uz-khP" secondAttribute="bottom" constant="30" id="s15-7D-PPM"/>
                             <constraint firstItem="2ic-9M-p6E" firstAttribute="top" secondItem="BYA-Uz-khP" secondAttribute="bottom" constant="92" id="tUN-19-JRY"/>
                             <constraint firstItem="HmL-o0-Y0a" firstAttribute="centerY" secondItem="Qca-eU-8Bd" secondAttribute="centerY" id="tqV-ZG-0KV"/>
                             <constraint firstItem="2ic-9M-p6E" firstAttribute="leading" secondItem="6Vu-Co-ABF" secondAttribute="trailing" constant="16" id="vk9-st-fVD"/>
@@ -123,14 +135,17 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="1024" height="768"/>
                     <connections>
+                        <outlet property="backOverview" destination="fel-66-85B" id="aXu-Vz-EJZ"/>
                         <outlet property="ingredientsNeeded" destination="6Vu-Co-ABF" id="AVV-HW-rAR"/>
                         <outlet property="stepName" destination="fuU-Xa-Un8" id="nGh-WP-pYv"/>
                         <outlet property="stepsTodo" destination="2ic-9M-p6E" id="z0P-7T-pJO"/>
+                        <outlet property="swipeLeft" destination="HmL-o0-Y0a" id="Wsp-Hb-9Un"/>
+                        <outlet property="swipeRight" destination="Qca-eU-8Bd" id="lFm-Zd-oYY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BDZ-xG-EEv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2843" y="953"/>
+            <point key="canvasLocation" x="2853" y="953"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="d0v-SA-FhQ">
@@ -238,7 +253,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="va6-XK-Eye" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="531" y="877"/>
+            <point key="canvasLocation" x="2800" y="-19"/>
         </scene>
     </scenes>
     <resources>
