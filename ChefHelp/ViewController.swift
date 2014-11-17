@@ -56,12 +56,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 	
 	func loadData() {
 		let nocolor = UIColor.whiteColor()
-		let group1 = UIColor.yellowColor()
-		let group2 = UIColor.cyanColor()
-		let group3 = UIColor.redColor()
-		let group4 = UIColor.greenColor()
-		let group5 = UIColor.grayColor()
-		let group6 = UIColor.magentaColor()
+		let group1 = UIColor(red: 222.0/255.0, green: 152.0/255.0, blue: 170.0/255.0, alpha: 1.0)
+		let group2 = UIColor(red: 244.0/255.0, green: 204.0/255.0, blue: 124.0/255.0, alpha: 1.0)
+		let group3 = UIColor(red: 237.0/255.0, green: 175.0/255.0, blue: 136.0/255.0, alpha: 1.0)
+		let group4 = UIColor(red: 213.0/255.0, green: 192.0/255.0, blue: 182.0/255.0, alpha: 1.0)
+		let group5 = UIColor(red: 174.0/255.0, green: 218.0/255.0, blue: 215.0/255.0, alpha: 1.0)
+		let group6 = UIColor(red: 222.0/255.0, green: 152.0/255.0, blue: 170.0/255.0, alpha: 1.0)
 		
 		let flour: Ingredient = Ingredient(name: "flour", attributes: "all-purpose", importance: Importance.MainIngredient, quantity: 2, unit: Unit.Cup, color: group1)
 		let bakingPowder: Ingredient = Ingredient(name: "baking powder", attributes: "", importance: Importance.MainIngredient, quantity: 2, unit: Unit.TeaSpoon, color: group1)

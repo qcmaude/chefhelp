@@ -12,5 +12,4 @@ import UIKit
 class CustomIngredientCell: UITableViewCell {
 	@IBOutlet weak var name: UILabel!
 	@IBOutlet weak var quantity: UILabel!
-	@IBOutlet weak var color: UIView!
 }

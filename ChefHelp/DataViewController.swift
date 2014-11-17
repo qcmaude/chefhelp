@@ -94,7 +94,8 @@ class DataViewController: UIViewController, UITableViewDataSource {
 			let ingredient = self.ingredients![indexPath.item]
 			cell.name?.text = ingredient.name
 			cell.quantity?.text = "\(ingredient.quantity) " + ingredient.unit.rawValue
-			cell.color.backgroundColor = ingredient.color
+			println(ingredient.color.description)
+			cell.backgroundColor = ingredient.color
 			return cell
 		}
 		
