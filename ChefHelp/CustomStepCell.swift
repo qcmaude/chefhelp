@@ -13,4 +13,5 @@ class CustomStepCell: UITableViewCell {
 	@IBOutlet weak var name: UILabel!
 	@IBOutlet weak var explanation: UILabel!
 	@IBOutlet weak var time: UILabel!
+	@IBOutlet weak var color: UIView!
 }

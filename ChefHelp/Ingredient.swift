@@ -14,13 +14,15 @@ class Ingredient: GroupProtocol {
 	let quantity: Float
 	let unit: Unit
 	let name: String
+	let color: UIColor
 	
-	init(name: String, attributes: String, importance: Importance, quantity: Float, unit: Unit) {
+	init(name: String, attributes: String, importance: Importance, quantity: Float, unit: Unit, color: UIColor) {
 		self.unit = unit
 		self.name = name
 		self.attributes = attributes
 		self.importance = importance
 		self.quantity = quantity
+		self.color = color
 	}
 }
 

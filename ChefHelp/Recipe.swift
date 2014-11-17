@@ -24,6 +24,10 @@ struct Recipe {
 	}
 }
 
+func ==(lhs: Recipe, rhs: Recipe) -> Bool {
+	return lhs.name == rhs.name
+}
+
 func computeTotalTime(steps: [GroupProtocol]) -> Int {
 	var total: Int = 0
 	for step in steps {

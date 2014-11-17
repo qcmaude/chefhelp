@@ -14,48 +14,92 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQR-Yo-pmZ">
-                        <rect key="frame" x="8" y="8" width="136" height="66"/>
+                        <rect key="frame" x="8" y="13" width="136" height="56"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="56" id="B6v-dQ-epM"/>
+                            <constraint firstAttribute="height" constant="70" id="D2L-gE-3MF"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="57"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="D2L-gE-3MF"/>
+                            </mask>
+                        </variation>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIl-4L-rtt">
-                        <rect key="frame" x="160" y="8" width="51" height="66"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIl-4L-rtt">
+                        <rect key="frame" x="160" y="28" width="206" height="26"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="51" id="b3J-KR-Oqd"/>
+                            <constraint firstAttribute="width" constant="70" id="b3J-KR-Oqd"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="b3J-KR-Oqd"/>
+                            </mask>
+                        </variation>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ip-a3-Ts9">
-                        <rect key="frame" x="381" y="30" width="100" height="21"/>
+                        <rect key="frame" x="381" y="21" width="100" height="40"/>
                         <constraints>
+                            <constraint firstAttribute="height" constant="40" id="2pC-LG-wva"/>
                             <constraint firstAttribute="width" constant="100" id="5nX-fH-Bvg"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b6D-nD-XQ9">
+                        <rect key="frame" x="387" y="19" width="44" height="44"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="44" id="20O-nN-6ch"/>
+                            <constraint firstAttribute="height" constant="44" id="lRj-Tl-tuS"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="centerY" secondItem="b6D-nD-XQ9" secondAttribute="centerY" id="1br-Ie-Zbh"/>
+                    <constraint firstItem="VQR-Yo-pmZ" firstAttribute="top" secondItem="vPJ-nH-gQX" secondAttribute="topMargin" constant="5" id="8UJ-jx-fpI"/>
                     <constraint firstItem="VQR-Yo-pmZ" firstAttribute="leading" secondItem="vPJ-nH-gQX" secondAttribute="leadingMargin" id="Fwc-nf-zXt"/>
                     <constraint firstItem="pIl-4L-rtt" firstAttribute="leading" secondItem="VQR-Yo-pmZ" secondAttribute="trailing" constant="16" id="Gmq-7e-f3p"/>
                     <constraint firstItem="VQR-Yo-pmZ" firstAttribute="top" secondItem="pIl-4L-rtt" secondAttribute="top" id="JuK-xK-rFd"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="b6D-nD-XQ9" secondAttribute="trailing" constant="50" id="NvN-7q-Z4y"/>
                     <constraint firstItem="pIl-4L-rtt" firstAttribute="top" secondItem="vPJ-nH-gQX" secondAttribute="topMargin" id="Nvb-Pu-M2Z"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="VQR-Yo-pmZ" secondAttribute="bottom" constant="5" id="Q38-JR-7pK"/>
                     <constraint firstItem="pIl-4L-rtt" firstAttribute="centerY" secondItem="vPJ-nH-gQX" secondAttribute="centerY" id="Z5b-e8-bgx"/>
                     <constraint firstItem="4ip-a3-Ts9" firstAttribute="trailing" secondItem="vPJ-nH-gQX" secondAttribute="trailingMargin" id="hQ0-26-S3K"/>
                     <constraint firstItem="4ip-a3-Ts9" firstAttribute="top" secondItem="vPJ-nH-gQX" secondAttribute="topMargin" constant="22" id="j6m-Ak-bJn"/>
+                    <constraint firstAttribute="centerX" secondItem="4ip-a3-Ts9" secondAttribute="centerX" constant="-186.5" id="jRV-0C-SwH"/>
+                    <constraint firstAttribute="centerY" secondItem="4ip-a3-Ts9" secondAttribute="centerY" id="jWY-zF-1Yk"/>
                     <constraint firstItem="pIl-4L-rtt" firstAttribute="bottom" secondItem="VQR-Yo-pmZ" secondAttribute="bottom" id="l6F-Rj-DBr"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="4ip-a3-Ts9" secondAttribute="bottom" constant="23.5" id="qg0-YV-c05"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="4ip-a3-Ts9" secondAttribute="bottom" constant="24" id="qg0-YV-c05"/>
+                    <constraint firstItem="4ip-a3-Ts9" firstAttribute="leading" secondItem="pIl-4L-rtt" secondAttribute="trailing" constant="15" id="rYn-4e-ozi"/>
+                    <constraint firstItem="4ip-a3-Ts9" firstAttribute="trailing" secondItem="vPJ-nH-gQX" secondAttribute="trailingMargin" id="uyW-I7-Ezv"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="JuK-xK-rFd"/>
+                        <exclude reference="Q38-JR-7pK"/>
+                        <exclude reference="Nvb-Pu-M2Z"/>
+                        <exclude reference="l6F-Rj-DBr"/>
+                        <exclude reference="hQ0-26-S3K"/>
+                        <exclude reference="j6m-Ak-bJn"/>
+                        <exclude reference="jRV-0C-SwH"/>
+                        <exclude reference="qg0-YV-c05"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
+                <outlet property="color" destination="b6D-nD-XQ9" id="pT1-Z5-unC"/>
                 <outlet property="explanation" destination="pIl-4L-rtt" id="nuL-kQ-PMt"/>
                 <outlet property="name" destination="VQR-Yo-pmZ" id="V7f-p6-Lig"/>
-                <outlet property="time" destination="4ip-a3-Ts9" id="Jhn-tg-My4"/>
+                <outlet property="time" destination="4ip-a3-Ts9" id="dHB-wT-w5x"/>
             </connections>
-            <point key="canvasLocation" x="372.5" y="248.5"/>
+            <point key="canvasLocation" x="372.5" y="246.5"/>
         </tableViewCell>
     </objects>
 </document>

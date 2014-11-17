@@ -42,12 +42,6 @@ class RootViewController: UIPageViewController, UIPageViewControllerDelegate, Na
 //        self.pageViewController!.view.frame = pageViewRect
         self.pageViewController!.didMoveToParentViewController(self)
         
-        print(self.ngest.description)
-        print(self.ngest.debugDescription)
-
-        //        print("Nanogest should be initialized")
-        //        print(self.ngest.description)
-        
         // Add the page view controller's gesture recognizers to the book view controller's view so that the gestures are started more easily.
         self.view.gestureRecognizers = self.pageViewController!.gestureRecognizers
     }
@@ -146,6 +140,7 @@ class RootViewController: UIPageViewController, UIPageViewControllerDelegate, Na
             let previousViewController = self.modelController.pageViewController(self.pageViewController!, viewControllerBeforeViewController: currentViewController)
             viewControllers = [previousViewController!, currentViewController]
         }
+
         self.pageViewController!.setViewControllers(viewControllers, direction: .Forward, animated: true, completion: {done in })
         
         return .Mid

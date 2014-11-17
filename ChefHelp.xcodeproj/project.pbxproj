@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		431CD0271A1946C9006480EF /* Nanogest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431CD0261A1946C9006480EF /* Nanogest.framework */; };
 		43A0CEFA19F85DDE008556C5 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A0CEF019F85DDE008556C5 /* CustomCell.swift */; };
 		43A0CEFB19F85DDE008556C5 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43A0CEF119F85DDE008556C5 /* CustomCell.xib */; };
 		43A0CEFC19F85DDE008556C5 /* CustomRecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A0CEF219F85DDE008556C5 /* CustomRecipeCell.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		431CD0261A1946C9006480EF /* Nanogest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nanogest.framework; path = ChefHelp/Nanogest.framework; sourceTree = "<group>"; };
 		43A0CEF019F85DDE008556C5 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		43A0CEF119F85DDE008556C5 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		43A0CEF219F85DDE008556C5 /* CustomRecipeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRecipeCell.swift; sourceTree = "<group>"; };
@@ -75,7 +77,6 @@
 		9DC00BC719F6D02900B9E92B /* DataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		9DC00BC919F6D04A00B9E92B /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		9DC00BCD19F6D0A000B9E92B /* ModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
-		9DE7AADD1A1920F9003F8F09 /* Nanogest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nanogest.framework; path = ../../Nanogest.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DA047981A1947CB00B78006 /* Nanogest.framework in Frameworks */,
+				431CD0271A1946C9006480EF /* Nanogest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,7 +112,7 @@
 		9D649B8A19F47753003474B6 = {
 			isa = PBXGroup;
 			children = (
-				9DE7AADD1A1920F9003F8F09 /* Nanogest.framework */,
+				431CD0261A1946C9006480EF /* Nanogest.framework */,
 				9D649B9519F47753003474B6 /* ChefHelp */,
 				9D649BAD19F47753003474B6 /* ChefHelpTests */,
 				9D649B9419F47753003474B6 /* Products */,
@@ -436,8 +437,7 @@
 					424,
 					/Users/Maude/Desktop/ECSE,
 					424,
-					/Users/Maude/Desktop/ECSE,
-					424,
+					"$(PROJECT_DIR)/ChefHelp"
 				);
 				INFOPLIST_FILE = ChefHelp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -459,8 +459,7 @@
 					424,
 					/Users/Maude/Desktop/ECSE,
 					424,
-					/Users/Maude/Desktop/ECSE,
-					424,
+					"$(PROJECT_DIR)/ChefHelp",
 				);
 				INFOPLIST_FILE = ChefHelp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
