@@ -69,28 +69,32 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
 		let icingSugar: Ingredient = Ingredient(name: "icing sugar", attributes: "", importance: Importance.MainIngredient, quantity: 1, unit: Unit.Cup, color: group6)
 		let icingGroup: Group = Group(name: "icing mix", rest: [creamCheese, butter, vanilla2, icingSugar])
 		
+		let wholeCake: Ingredient = Ingredient(name: "whole cake", attributes: "", importance: Importance.MainIngredient, quantity: 1, unit: Unit.Whole, color: group1)
+		let butterForPan: Ingredient = Ingredient(name: "butter", attributes: "soften", importance: Importance.MainIngredient, quantity: 0.5, unit: Unit.Gram, color: group4)
+		let flourForPan: Ingredient = Ingredient(name: "flour", attributes: "all-purpose", importance: Importance.MainIngredient, quantity: 0.5, unit: Unit.Gram, color: group1)
+
 		let step1: Group = Group(name: "Step 1", rest: [
-			Step(name: "GREASE", ingredientsNeeded: [], time: 2, explanation: "grease the metal cake pan", timers: [], color: UIColor.whiteColor()),
-			Step(name: "FLOUR", ingredientsNeeded: [], time: 2, explanation: "flour the metal cake pan", timers: [], color: UIColor.whiteColor())
+			Step(name: "GREASE", ingredientsNeeded: [butterForPan], time: 2, explanation: "grease the metal cake pan", timers: [], color1: group4, color2: nocolor),
+			Step(name: "FLOUR", ingredientsNeeded: [flourForPan], time: 2, explanation: "flour the metal cake pan", timers: [], color1: group1, color2: nocolor)
 			])
 		
 		let step2: Group = Group(name: "Step 2", rest: [
-			Step(name: "WHISK", ingredientsNeeded: [flour, bakingPowder, cinnamon, bakingSoda, salt, nutmeg], time: 5, explanation: "whisk all together", timers: [], color: group1),
-			Step(name: "BEAT", ingredientsNeeded: [sugar, brownSugar, eggs, oil, vanilla], time: 5, explanation: "beat together until smooth", timers: [5], color: group2),
-			Step(name: "MIX", ingredientsNeeded: [dryGroup, wetGroup], time: 5, explanation: "mix the dry ingredients and the liquids together until moistened", timers: [5], color: nocolor),
-			Step(name: "ADD", ingredientsNeeded: [carrots, pineapple, pecans], time: 3, explanation: "stir in these remaining ingredients", timers: [], color: group3),
-			Step(name: "SPREAD", ingredientsNeeded: [cakeGroup], time: 1, explanation: "spread mixture in prepared pan", timers: [], color: nocolor)
+			Step(name: "WHISK", ingredientsNeeded: [flour, bakingPowder, cinnamon, bakingSoda, salt, nutmeg], time: 5, explanation: "whisk all together", timers: [], color1: group1, color2: nocolor),
+			Step(name: "BEAT", ingredientsNeeded: [sugar, brownSugar, eggs, oil, vanilla], time: 5, explanation: "beat together until smooth", timers: [5], color1: group2, color2: nocolor),
+			Step(name: "MIX", ingredientsNeeded: [dryGroup, wetGroup], time: 5, explanation: "mix the dry ingredients and the liquids together until moistened", timers: [5], color1: group1, color2: group2),
+			Step(name: "ADD", ingredientsNeeded: [carrots, pineapple, pecans], time: 3, explanation: "stir in these remaining ingredients", timers: [], color1: group3, color2: nocolor),
+			Step(name: "SPREAD", ingredientsNeeded: [cakeGroup], time: 1, explanation: "spread mixture in prepared pan", timers: [], color1: nocolor, color2: nocolor)
 			])
 		
 		let step3: Group = Group(name: "Step 3", rest: [
-			Step(name: "BAKE", ingredientsNeeded: [cakeGroup], time: 35, explanation: "bake for 35min at 180C (350F)", timers: [35], color: nocolor)
+			Step(name: "BAKE", ingredientsNeeded: [wholeCake], time: 35, explanation: "bake for 35min at 180C (350F)", timers: [35], color1: group1, color2: nocolor)
 			])
 		
 		let step4: Group = Group(name: "Step 4", rest: [
-			Step(name: "BEAT", ingredientsNeeded: [creamCheese, butter], time: 5, explanation: "beat cream chees and butter until smooth", timers: [5], color: group4),
-			Step(name: "ADD", ingredientsNeeded: [vanilla2], time: 2, explanation: "beat in vanilla", timers: [], color: group5),
-			Step(name: "ADD", ingredientsNeeded: [icingSugar], time: 2, explanation: "beat in icing sugar one third at the time", timers: [], color: group6),
-			Step(name: "SPREAD", ingredientsNeeded: [icingGroup, cakeGroup], time: 1, explanation: "spread the whole mix on the top of the cake", timers: [], color: nocolor)
+			Step(name: "BEAT", ingredientsNeeded: [creamCheese, butter], time: 5, explanation: "beat cream chees and butter until smooth", timers: [5], color1: group4, color2: nocolor),
+			Step(name: "ADD", ingredientsNeeded: [vanilla2], time: 2, explanation: "beat in vanilla", timers: [], color1: group5, color2: nocolor),
+			Step(name: "ADD", ingredientsNeeded: [icingSugar], time: 2, explanation: "beat in icing sugar one third at the time", timers: [], color1: group6, color2: nocolor),
+			Step(name: "SPREAD", ingredientsNeeded: [icingGroup, cakeGroup], time: 1, explanation: "spread the whole mix on the top of the cake", timers: [], color1: nocolor, color2: nocolor)
 			])
 		
 //		let carrotCakeRecipe: Recipe = Recipe(name: "Carrot Cake", ingredients: [cakeGroup, icingGroup], steps: [step1, step2, step3, step4],difficulty: Difficulty.Moderate)

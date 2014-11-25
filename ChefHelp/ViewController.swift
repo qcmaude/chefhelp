@@ -8,14 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate {
 	@IBOutlet weak var table: UITableView!
 	@IBOutlet weak var allIngredients: UITableView!
 	@IBOutlet weak var recipeTile: UILabel!
 	
+	var filteredRecipes: [Recipe] = []
 	var allRecipes: [Recipe] = []
 	var selectedRecipeIngredients: [Ingredient] = []
 	var selectedRecipe: Recipe?
+	var results: [[String]] = []
 	
 	override init() {
 		super.init()
@@ -32,6 +34,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		
 		self.allIngredients.registerNib(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "ingredients")
 		self.table.registerNib(UINib(nibName: "CustomRecipeCell", bundle: nil), forCellReuseIdentifier: "recipes")
+		self.searchDisplayController!.searchResultsTableView.registerNib(UINib(nibName: "CustomFilteredRecipeCell", bundle: nil), forCellReuseIdentifier: "filteredRecipes")
 
 		self.table.dataSource = self
 		self.table.delegate = self
@@ -97,28 +100,30 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		let icingSugar: Ingredient = Ingredient(name: "icing sugar", attributes: "", importance: Importance.MainIngredient, quantity: 1, unit: Unit.Cup, color: group6)
 		let icingGroup: Group = Group(name: "icing mix", rest: [creamCheese, butter, vanilla2, icingSugar])
 		
-		let step1: Group = Group(name: "step 1", rest: [
-			Step(name: "GREASE", ingredientsNeeded: [], time: 2, explanation: "grease the metal cake pan", timers: [], color: UIColor.whiteColor()),
-			Step(name: "FLOUR", ingredientsNeeded: [], time: 2, explanation: "flour the metal cake pan", timers: [], color: UIColor.whiteColor())
+		let wholeCake: Ingredient = Ingredient(name: "whole cake", attributes: "", importance: Importance.MainIngredient, quantity: 1, unit: Unit.Whole, color: group1)
+		
+		let step1: Group = Group(name: "Step 1", rest: [
+			Step(name: "GREASE", ingredientsNeeded: [butter], time: 2, explanation: "grease the metal cake pan", timers: [], color1: group4, color2: nocolor),
+			Step(name: "FLOUR", ingredientsNeeded: [flour], time: 2, explanation: "flour the metal cake pan", timers: [], color1: group1, color2: nocolor)
 			])
 		
-		let step2: Group = Group(name: "step 2", rest: [
-			Step(name: "WHISK", ingredientsNeeded: [flour, bakingPowder, cinnamon, bakingSoda, salt, nutmeg], time: 5, explanation: "whisk all together", timers: [], color: group1),
-			Step(name: "BEAT", ingredientsNeeded: [sugar, brownSugar, eggs, oil, vanilla], time: 5, explanation: "beat together until smooth", timers: [5], color: group2),
-			Step(name: "MIX", ingredientsNeeded: [dryGroup, wetGroup], time: 5, explanation: "mix the dry ingredients and the liquids together until moistened", timers: [5], color: nocolor),
-			Step(name: "ADD", ingredientsNeeded: [carrots, pineapple, pecans], time: 3, explanation: "stir in these remaining ingredients", timers: [], color: group3),
-			Step(name: "SPREAD", ingredientsNeeded: [cakeGroup], time: 1, explanation: "spread mixture in prepared pan", timers: [], color: nocolor)
+		let step2: Group = Group(name: "Step 2", rest: [
+			Step(name: "WHISK", ingredientsNeeded: [flour, bakingPowder, cinnamon, bakingSoda, salt, nutmeg], time: 5, explanation: "whisk all together", timers: [], color1: group1, color2: nocolor),
+			Step(name: "BEAT", ingredientsNeeded: [sugar, brownSugar, eggs, oil, vanilla], time: 5, explanation: "beat together until smooth", timers: [5], color1: group2, color2: nocolor),
+			Step(name: "MIX", ingredientsNeeded: [dryGroup, wetGroup], time: 5, explanation: "mix the dry ingredients and the liquids together until moistened", timers: [5], color1: group1, color2: group2),
+			Step(name: "ADD", ingredientsNeeded: [carrots, pineapple, pecans], time: 3, explanation: "stir in these remaining ingredients", timers: [], color1: group3, color2: nocolor),
+			Step(name: "SPREAD", ingredientsNeeded: [cakeGroup], time: 1, explanation: "spread mixture in prepared pan", timers: [], color1: nocolor, color2: nocolor)
 			])
 		
-		let step3: Group = Group(name: "step 3", rest: [
-			Step(name: "BAKE", ingredientsNeeded: [cakeGroup], time: 35, explanation: "bake for 35min at 180C (350F)", timers: [35], color: nocolor)
+		let step3: Group = Group(name: "Step 3", rest: [
+			Step(name: "BAKE", ingredientsNeeded: [wholeCake], time: 35, explanation: "bake for 35min at 180C (350F)", timers: [35], color1: group1, color2: nocolor)
 			])
 		
-		let step4: Group = Group(name: "step 4", rest: [
-			Step(name: "BEAT", ingredientsNeeded: [creamCheese, butter], time: 5, explanation: "beat cream chees and butter until smooth", timers: [5], color: group4),
-			Step(name: "ADD", ingredientsNeeded: [vanilla2], time: 2, explanation: "beat in vanilla", timers: [], color: group5),
-			Step(name: "ADD", ingredientsNeeded: [icingSugar], time: 2, explanation: "beat in icing sugar one third at the time", timers: [], color: group6),
-			Step(name: "SPREAD", ingredientsNeeded: [icingGroup, cakeGroup], time: 1, explanation: "spread the whole mix on the top of the cake", timers: [], color: nocolor)
+		let step4: Group = Group(name: "Step 4", rest: [
+			Step(name: "BEAT", ingredientsNeeded: [creamCheese, butter], time: 5, explanation: "beat cream chees and butter until smooth", timers: [5], color1: group4, color2: nocolor),
+			Step(name: "ADD", ingredientsNeeded: [vanilla2], time: 2, explanation: "beat in vanilla", timers: [], color1: group5, color2: nocolor),
+			Step(name: "ADD", ingredientsNeeded: [icingSugar], time: 2, explanation: "beat in icing sugar one third at the time", timers: [], color1: group6, color2: nocolor),
+			Step(name: "SPREAD", ingredientsNeeded: [icingGroup, cakeGroup], time: 1, explanation: "spread the whole mix on the top of the cake", timers: [], color1: nocolor, color2: nocolor)
 			])
 		
 		let carrotCakeRecipe: Recipe = Recipe(name: "Carrot Cake", ingredients: [cakeGroup, icingGroup], steps: [step1, step2, step3, step4],difficulty: Difficulty.Moderate)
@@ -126,20 +131,66 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		self.allRecipes.append(carrotCakeRecipe)
 	}
 	
+	func filterContentForSearchText(searchText: String) {
+		// Filter the array using the filter method
+		self.filteredRecipes = self.allRecipes.filter({( recipe: Recipe) -> Bool in
+			let stringMatch = recipe.name.rangeOfString(searchText)
+			let ingredientsMatch = self.generateIngredientList(recipe).filter({(ingredient: Ingredient) -> Bool in
+				return ingredient.name.rangeOfString(searchText) != nil && ingredient.importance == Importance.MainIngredient
+			})
+			if stringMatch != nil || ingredientsMatch.count > 0 {
+				self.results += [["name: \(recipe.name)"]]
+			}
+//			if stringMatch != nil || ingredientsMatch.count > 0 {
+//				var arr = []
+//				for i in ingredientsMatch {
+//					arr.add
+//				}
+//				results.append(arr)
+//			}
+			return stringMatch != nil || ingredientsMatch.count > 0
+		})
+	}
+	func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchString searchString: String!) -> Bool {
+		self.filterContentForSearchText(searchString)
+		return true
+	}
+ 
+	func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
+		self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
+		return true
+	}
+	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		if tableView == self.allIngredients {
+		switch tableView {
+		case self.searchDisplayController!.searchResultsTableView:
+			return self.filteredRecipes.count
+		case self.allIngredients:
 			return self.selectedRecipeIngredients.count
-		}
-		
-		if tableView == self.table {
+		default:
 			return self.allRecipes.count
 		}
-		
-		return 0
 	}
+	
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 		switch tableView {
+		case self.searchDisplayController!.searchResultsTableView:
+			var cell:CustomFilteredRecipeCell = self.searchDisplayController!.searchResultsTableView.dequeueReusableCellWithIdentifier("filteredRecipes") as CustomFilteredRecipeCell
+			if(self.selectedRecipe! == self.filteredRecipes[indexPath.row]) {
+				cell.backgroundColor = UIColor(red: (20.0/255.0), green: (100.0/255.0), blue: (200.0/255.0), alpha: 0.5)
+			} else {
+				cell.backgroundColor = UIColor.whiteColor()
+			}
+			
+			cell.name?.text = self.filteredRecipes[indexPath.row].name
+			cell.time?.text = "\(self.getTime(self.filteredRecipes[indexPath.row])) min"
+			if(self.results[indexPath.row].count > 0) {
+				cell.result1?.text = "\(self.results[indexPath.row][0])"
+			}
+			
+			cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+			return cell
 		case self.table:
 			var cell:CustomRecipeCell = self.table.dequeueReusableCellWithIdentifier("recipes") as CustomRecipeCell
 			if(self.selectedRecipe! == self.allRecipes[indexPath.row]) {
@@ -157,16 +208,70 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 			cell.name?.text = self.selectedRecipeIngredients[indexPath.row].name
 			cell.quantity?.text = "\(self.selectedRecipeIngredients[indexPath.row].quantity) " + self.selectedRecipeIngredients[indexPath.row].unit.rawValue
 			cell.attributes?.text = self.selectedRecipeIngredients[indexPath.row].attributes
+			
+			cell.name?.textColor = UIColor.blackColor().colorWithAlphaComponent(0.40)
+			cell.quantity?.textColor = UIColor.blackColor().colorWithAlphaComponent(0.40)
+			cell.attributes?.textColor = UIColor.blackColor().colorWithAlphaComponent(0.40)
+			
+			let allCells = self.allIngredients.visibleCells() as [CustomCell]
+			for c in allCells {
+				c.name?.textColor = UIColor.blackColor()
+				c.quantity?.textColor = UIColor.blackColor()
+				c.attributes?.textColor = UIColor.blackColor()
+			}
+			
+			if allCells.count > 1 && indexPath.row != 8 && indexPath.row != 9 {
+				let color1 = UIColor.blackColor().colorWithAlphaComponent(0.60)
+				let color2 = UIColor.blackColor().colorWithAlphaComponent(0.40)
+				
+				allCells[allCells.count - 1].name?.textColor = color1
+				allCells[allCells.count - 1].quantity?.textColor = color1
+				allCells[allCells.count - 1].attributes?.textColor = color1
+				
+				allCells[allCells.count - 2].name?.textColor = color2
+				allCells[allCells.count - 2].quantity?.textColor = color2
+				allCells[allCells.count - 2].attributes?.textColor = color2
+			}
+
+//			
+//			if allCells.count > 3 {
+//				let color1 = UIColor.blackColor().colorWithAlphaComponent(0.40)
+//				let color2 = UIColor.blackColor().colorWithAlphaComponent(0.60)
+//				let color3 = UIColor.blackColor().colorWithAlphaComponent(0.80)
+//				allCells[allCells.count - 1].name?.textColor = color1
+//				allCells[allCells.count - 1].quantity?.textColor = color1
+//				allCells[allCells.count - 1].attributes?.textColor = color1
+//				
+//				allCells[allCells.count - 2].name?.textColor = color2
+//				allCells[allCells.count - 2].quantity?.textColor = color2
+//				allCells[allCells.count - 2].attributes?.textColor = color2
+//				
+//				allCells[allCells.count - 3].name?.textColor = color3
+//				allCells[allCells.count - 3].quantity?.textColor = color3
+//				allCells[allCells.count - 3].attributes?.textColor = color3
+//			}
 			return cell
 		}
 	}
 
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-		var cell:CustomRecipeCell = self.table.dequeueReusableCellWithIdentifier("recipes") as CustomRecipeCell
-		self.selectedRecipeIngredients = self.generateIngredientList(self.allRecipes[indexPath.item])
-		self.recipeTile.text = self.allRecipes[indexPath.item].name
-		self.allIngredients.reloadData()
-		self.table.reloadData()
+		switch tableView {
+		case self.searchDisplayController!.searchResultsTableView:
+			println("selected from search")
+			var cell:CustomRecipeCell = self.table.dequeueReusableCellWithIdentifier("recipes") as CustomRecipeCell
+			self.selectedRecipeIngredients = self.generateIngredientList(self.filteredRecipes[indexPath.item])
+			self.recipeTile.text = self.filteredRecipes[indexPath.item].name
+			self.allIngredients.reloadData()
+			self.table.reloadData()
+			self.searchDisplayController!.setActive(false, animated: true)
+		default:
+			var cell:CustomRecipeCell = self.table.dequeueReusableCellWithIdentifier("recipes") as CustomRecipeCell
+			self.selectedRecipeIngredients = self.generateIngredientList(self.allRecipes[indexPath.item])
+			self.recipeTile.text = self.allRecipes[indexPath.item].name
+			self.allIngredients.reloadData()
+			self.table.reloadData()
+		}
+		
 //		let recipeSelected: Recipe = self.allRecipes[indexPath.item]
 //		let ingredients: [Ingredient] = self.generateIngredientList(recipeSelected)
 //		

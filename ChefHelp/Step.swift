@@ -14,14 +14,16 @@ class Step: GroupProtocol {
 	let time: Int
 	let explanation: String
 	let timers: [Int]
-	let color: UIColor
+	let color1: UIColor
+	let color2: UIColor
 	
-	init(name: String, ingredientsNeeded: [GroupProtocol], time: Int, explanation: String, timers: [Int], color: UIColor) {
+	init(name: String, ingredientsNeeded: [GroupProtocol], time: Int, explanation: String, timers: [Int], color1: UIColor, color2: UIColor) {
 		self.name = name
 		self.ingredientsNeeded = ingredientsNeeded
 		self.time = time
 		self.explanation = explanation
 		self.timers = timers
-		self.color = color
+		self.color1 = color1
+		self.color2 = color2
 	}
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -29,7 +29,7 @@
                         </variation>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIl-4L-rtt">
-                        <rect key="frame" x="160" y="28" width="206" height="26"/>
+                        <rect key="frame" x="160" y="28" width="181" height="26"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="70" id="b3J-KR-Oqd"/>
                         </constraints>
@@ -60,24 +60,44 @@
                             <constraint firstAttribute="height" constant="44" id="lRj-Tl-tuS"/>
                         </constraints>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1h-SI-dnD">
+                        <rect key="frame" x="385" y="21" width="41" height="41"/>
+                        <color key="backgroundColor" red="0.11892880810000001" green="0.34691529789999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="41" id="qHK-mj-I0N"/>
+                            <constraint firstAttribute="width" constant="41" id="tKM-dE-lbc"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSL-BC-tEu">
+                        <rect key="frame" x="336" y="21" width="41" height="41"/>
+                        <color key="backgroundColor" red="0.11892880810000001" green="0.34691529789999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="41" id="3JE-Gh-8aJ"/>
+                            <constraint firstAttribute="width" constant="41" id="Wmj-wR-Lgq"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="centerY" secondItem="b6D-nD-XQ9" secondAttribute="centerY" id="1br-Ie-Zbh"/>
+                    <constraint firstAttribute="centerY" secondItem="W1h-SI-dnD" secondAttribute="centerY" id="3cb-FX-89I"/>
                     <constraint firstItem="VQR-Yo-pmZ" firstAttribute="top" secondItem="vPJ-nH-gQX" secondAttribute="topMargin" constant="5" id="8UJ-jx-fpI"/>
                     <constraint firstItem="VQR-Yo-pmZ" firstAttribute="leading" secondItem="vPJ-nH-gQX" secondAttribute="leadingMargin" id="Fwc-nf-zXt"/>
                     <constraint firstItem="pIl-4L-rtt" firstAttribute="leading" secondItem="VQR-Yo-pmZ" secondAttribute="trailing" constant="16" id="Gmq-7e-f3p"/>
                     <constraint firstItem="VQR-Yo-pmZ" firstAttribute="top" secondItem="pIl-4L-rtt" secondAttribute="top" id="JuK-xK-rFd"/>
+                    <constraint firstItem="4ip-a3-Ts9" firstAttribute="leading" secondItem="W1h-SI-dnD" secondAttribute="trailing" constant="-45" id="MSZ-aj-al7"/>
                     <constraint firstAttribute="trailingMargin" secondItem="b6D-nD-XQ9" secondAttribute="trailing" constant="50" id="NvN-7q-Z4y"/>
                     <constraint firstItem="pIl-4L-rtt" firstAttribute="top" secondItem="vPJ-nH-gQX" secondAttribute="topMargin" id="Nvb-Pu-M2Z"/>
                     <constraint firstAttribute="bottomMargin" secondItem="VQR-Yo-pmZ" secondAttribute="bottom" constant="5" id="Q38-JR-7pK"/>
+                    <constraint firstAttribute="centerY" secondItem="uSL-BC-tEu" secondAttribute="centerY" id="Tdb-kg-Uke"/>
                     <constraint firstItem="pIl-4L-rtt" firstAttribute="centerY" secondItem="vPJ-nH-gQX" secondAttribute="centerY" id="Z5b-e8-bgx"/>
+                    <constraint firstItem="W1h-SI-dnD" firstAttribute="leading" secondItem="uSL-BC-tEu" secondAttribute="trailing" constant="8" id="aju-RI-z8w"/>
                     <constraint firstItem="4ip-a3-Ts9" firstAttribute="trailing" secondItem="vPJ-nH-gQX" secondAttribute="trailingMargin" id="hQ0-26-S3K"/>
                     <constraint firstItem="4ip-a3-Ts9" firstAttribute="top" secondItem="vPJ-nH-gQX" secondAttribute="topMargin" constant="22" id="j6m-Ak-bJn"/>
                     <constraint firstAttribute="centerX" secondItem="4ip-a3-Ts9" secondAttribute="centerX" constant="-186.5" id="jRV-0C-SwH"/>
                     <constraint firstAttribute="centerY" secondItem="4ip-a3-Ts9" secondAttribute="centerY" id="jWY-zF-1Yk"/>
                     <constraint firstItem="pIl-4L-rtt" firstAttribute="bottom" secondItem="VQR-Yo-pmZ" secondAttribute="bottom" id="l6F-Rj-DBr"/>
                     <constraint firstAttribute="bottomMargin" secondItem="4ip-a3-Ts9" secondAttribute="bottom" constant="24" id="qg0-YV-c05"/>
-                    <constraint firstItem="4ip-a3-Ts9" firstAttribute="leading" secondItem="pIl-4L-rtt" secondAttribute="trailing" constant="15" id="rYn-4e-ozi"/>
+                    <constraint firstItem="4ip-a3-Ts9" firstAttribute="leading" secondItem="pIl-4L-rtt" secondAttribute="trailing" constant="40" id="rYn-4e-ozi"/>
                     <constraint firstItem="4ip-a3-Ts9" firstAttribute="trailing" secondItem="vPJ-nH-gQX" secondAttribute="trailingMargin" id="uyW-I7-Ezv"/>
                 </constraints>
                 <variation key="default">
@@ -94,12 +114,13 @@
                 </variation>
             </tableViewCellContentView>
             <connections>
-                <outlet property="color" destination="b6D-nD-XQ9" id="pT1-Z5-unC"/>
+                <outlet property="color1" destination="uSL-BC-tEu" id="6aa-zz-U91"/>
+                <outlet property="color2" destination="W1h-SI-dnD" id="b9W-uz-mwR"/>
                 <outlet property="explanation" destination="pIl-4L-rtt" id="nuL-kQ-PMt"/>
                 <outlet property="name" destination="VQR-Yo-pmZ" id="V7f-p6-Lig"/>
                 <outlet property="time" destination="4ip-a3-Ts9" id="dHB-wT-w5x"/>
             </connections>
-            <point key="canvasLocation" x="372.5" y="246.5"/>
+            <point key="canvasLocation" x="372.5" y="244.5"/>
         </tableViewCell>
     </objects>
 </document>

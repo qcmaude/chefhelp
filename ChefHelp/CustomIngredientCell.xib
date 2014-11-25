@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -13,8 +13,8 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jdg-Hl-zrD" id="nzn-k3-zO6">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkU-VZ-eI6">
-                        <rect key="frame" x="421" y="19" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkU-VZ-eI6">
+                        <rect key="frame" x="421" y="8" width="42" height="43"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="6ld-Yc-2vi"/>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="fxq-bg-3dv"/>
@@ -22,7 +22,7 @@
                             <constraint firstAttribute="width" constant="150" id="qRT-je-rhs"/>
                             <constraint firstAttribute="width" constant="42" id="zdD-6L-lBL"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                         <variation key="default">
@@ -35,14 +35,14 @@
                         </variation>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75000000000000022" translatesAutoresizingMaskIntoConstraints="NO" id="jkK-Wp-YQL">
-                        <rect key="frame" x="13" y="19" width="363" height="21"/>
+                        <rect key="frame" x="13" y="8" width="363" height="43"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="363" id="4pv-ct-In3"/>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="363" id="FZR-Jg-agg"/>
                             <constraint firstAttribute="height" constant="21" id="s1e-aI-Bkx"/>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="tWA-EK-L5R"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                         <variation key="default">
@@ -55,11 +55,11 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailingMargin" secondItem="kkU-VZ-eI6" secondAttribute="trailing" constant="19" id="1md-hK-j51"/>
-                    <constraint firstItem="kkU-VZ-eI6" firstAttribute="top" secondItem="nzn-k3-zO6" secondAttribute="topMargin" constant="11" id="UZM-4r-PCD"/>
+                    <constraint firstItem="kkU-VZ-eI6" firstAttribute="top" secondItem="nzn-k3-zO6" secondAttribute="topMargin" id="UZM-4r-PCD"/>
                     <constraint firstItem="jkK-Wp-YQL" firstAttribute="leading" secondItem="nzn-k3-zO6" secondAttribute="leadingMargin" constant="5" id="Vd1-Wt-osv"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="kkU-VZ-eI6" secondAttribute="bottom" constant="11" id="asB-NH-ojn"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="jkK-Wp-YQL" secondAttribute="bottom" constant="11" id="hYJ-hZ-j5D"/>
-                    <constraint firstItem="jkK-Wp-YQL" firstAttribute="top" secondItem="nzn-k3-zO6" secondAttribute="topMargin" constant="11" id="k7D-Ea-dsN"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="kkU-VZ-eI6" secondAttribute="bottom" id="asB-NH-ojn"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="jkK-Wp-YQL" secondAttribute="bottom" id="hYJ-hZ-j5D"/>
+                    <constraint firstItem="jkK-Wp-YQL" firstAttribute="top" secondItem="nzn-k3-zO6" secondAttribute="topMargin" id="k7D-Ea-dsN"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

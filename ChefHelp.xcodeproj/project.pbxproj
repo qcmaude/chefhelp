@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		431CD0271A1946C9006480EF /* Nanogest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431CD0261A1946C9006480EF /* Nanogest.framework */; };
+		432A05321A243FC700F94B14 /* CustomFilteredRecipeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 432A05311A243FC700F94B14 /* CustomFilteredRecipeCell.xib */; };
+		432A05341A24403600F94B14 /* CustomFilteredRecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432A05331A24403600F94B14 /* CustomFilteredRecipeCell.swift */; };
 		43A0CEFA19F85DDE008556C5 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A0CEF019F85DDE008556C5 /* CustomCell.swift */; };
 		43A0CEFB19F85DDE008556C5 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43A0CEF119F85DDE008556C5 /* CustomCell.xib */; };
 		43A0CEFC19F85DDE008556C5 /* CustomRecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A0CEF219F85DDE008556C5 /* CustomRecipeCell.swift */; };
@@ -30,7 +32,6 @@
 		9D649BA519F47753003474B6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D649BA319F47753003474B6 /* LaunchScreen.xib */; };
 		9D649BB119F47753003474B6 /* ChefHelpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D649BB019F47753003474B6 /* ChefHelpTests.swift */; };
 		9DA047961A193F4E00B78006 /* ChefHelp-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 9DA047951A193F4E00B78006 /* ChefHelp-Bridging-Header.h */; };
-		9DA047981A1947CB00B78006 /* Nanogest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE7AADD1A1920F9003F8F09 /* Nanogest.framework */; };
 		9DC00BC819F6D02900B9E92B /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC00BC719F6D02900B9E92B /* DataViewController.swift */; };
 		9DC00BCA19F6D04A00B9E92B /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC00BC919F6D04A00B9E92B /* RootViewController.swift */; };
 		9DC00BCE19F6D0A000B9E92B /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC00BCD19F6D0A000B9E92B /* ModelController.swift */; };
@@ -48,6 +49,8 @@
 
 /* Begin PBXFileReference section */
 		431CD0261A1946C9006480EF /* Nanogest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nanogest.framework; path = ChefHelp/Nanogest.framework; sourceTree = "<group>"; };
+		432A05311A243FC700F94B14 /* CustomFilteredRecipeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomFilteredRecipeCell.xib; sourceTree = "<group>"; };
+		432A05331A24403600F94B14 /* CustomFilteredRecipeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFilteredRecipeCell.swift; sourceTree = "<group>"; };
 		43A0CEF019F85DDE008556C5 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		43A0CEF119F85DDE008556C5 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		43A0CEF219F85DDE008556C5 /* CustomRecipeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRecipeCell.swift; sourceTree = "<group>"; };
@@ -105,6 +108,7 @@
 				43A0CEF319F85DDE008556C5 /* CustomRecipeCell.xib */,
 				43A0CF0619F8A544008556C5 /* CustomStepCell.xib */,
 				43A0CF0919F8A579008556C5 /* CustomIngredientCell.xib */,
+				432A05311A243FC700F94B14 /* CustomFilteredRecipeCell.xib */,
 			);
 			name = CustomCells;
 			sourceTree = "<group>";
@@ -134,8 +138,9 @@
 				43A0CF0819F8A55A008556C5 /* CustomCells */,
 				43A0CEF019F85DDE008556C5 /* CustomCell.swift */,
 				43A0CEF219F85DDE008556C5 /* CustomRecipeCell.swift */,
-				43A0CF0B19F8A5AA008556C5 /* CustomIngredientCell.swift */,
 				43A0CF0D19F8A5D8008556C5 /* CustomStepCell.swift */,
+				43A0CF0B19F8A5AA008556C5 /* CustomIngredientCell.swift */,
+				432A05331A24403600F94B14 /* CustomFilteredRecipeCell.swift */,
 				43A0CF0419F85F2D008556C5 /* AppDelegate.swift */,
 				43A0CEF419F85DDE008556C5 /* Group.swift */,
 				43A0CEF519F85DDE008556C5 /* GroupProtocol.swift */,
@@ -270,6 +275,7 @@
 				43A0CF0719F8A544008556C5 /* CustomStepCell.xib in Resources */,
 				9D649BA519F47753003474B6 /* LaunchScreen.xib in Resources */,
 				43A0CF0A19F8A579008556C5 /* CustomIngredientCell.xib in Resources */,
+				432A05321A243FC700F94B14 /* CustomFilteredRecipeCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +300,7 @@
 				9DA047961A193F4E00B78006 /* ChefHelp-Bridging-Header.h in Sources */,
 				43A0CF0119F85DDE008556C5 /* Recipe.swift in Sources */,
 				43A0CF0C19F8A5AA008556C5 /* CustomIngredientCell.swift in Sources */,
+				432A05341A24403600F94B14 /* CustomFilteredRecipeCell.swift in Sources */,
 				43A0CF0E19F8A5D8008556C5 /* CustomStepCell.swift in Sources */,
 				43A0CF0319F85DDE008556C5 /* ViewController.swift in Sources */,
 				9D649B9D19F47753003474B6 /* DetailViewController.swift in Sources */,
@@ -437,7 +444,7 @@
 					424,
 					/Users/Maude/Desktop/ECSE,
 					424,
-					"$(PROJECT_DIR)/ChefHelp"
+					"$(PROJECT_DIR)/ChefHelp",
 				);
 				INFOPLIST_FILE = ChefHelp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

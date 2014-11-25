@@ -16,39 +16,94 @@ class DataViewController: UIViewController, UITableViewDataSource {
 	@IBOutlet weak var stepsTodo: UITableView!
 	@IBOutlet weak var stepName: UILabel!
     @IBOutlet weak var backOverview: UIButton!
-//    @IBOutlet weak var swipeRight: UILabel!
-//    @IBOutlet weak var swipeLeft: UILabel!
     @IBOutlet weak var swipeRight: UILabel!
     @IBOutlet weak var swipeLeft: UILabel!
-
+	@IBOutlet weak var timerButton: UIButton!
+	@IBOutlet weak var timerLabel: UILabel!
+	
+	var runningTimer: NSTimer?
+	var totalCountdownInterval: NSTimeInterval = 2101;
+	var startDate = NSDate();
+	var minutes = 35
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 		
 		self.ingredientsNeeded.registerNib(UINib(nibName: "CustomIngredientCell", bundle: nil), forCellReuseIdentifier: "ingredientsNeeded")
-		
+		self.ingredientsNeeded.rowHeight = 45
 		self.stepsTodo.registerNib(UINib(nibName: "CustomStepCell", bundle: nil), forCellReuseIdentifier: "substeps")
-		stepsTodo.rowHeight = 70
+		self.stepsTodo.rowHeight = 70
+		timerButton.addTarget(self, action: Selector("timerOnTap:"), forControlEvents: .TouchUpInside)
+
         // Do any additional setup after loading the view, typically from a nib.
     }
+	
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+	
+	func timerOnTap(sender: UIButton!) {
+		if runningTimer == nil {
+			runningTimer = NSTimer(timeInterval:1.0, target:self, selector:Selector("timerDidTick:"), userInfo:nil, repeats: true);
+			NSRunLoop.mainRunLoop().addTimer(runningTimer!, forMode: NSRunLoopCommonModes);
+			let elapsedTime: NSTimeInterval = NSDate().timeIntervalSinceDate(startDate)
+			let remainingTime = Int(floor(totalCountdownInterval - elapsedTime))
+			
+			if (remainingTime <= 0) {
+				runningTimer!.invalidate()
+				runningTimer = nil
+				timerLabel.text = "Start \(minutes)min timer"
+				return
+			}
+			let numberOfSeconds = remainingTime % 60
+			let numberOfMinutes = remainingTime/60 % 60
+			minutes = numberOfMinutes
+			let numberOfHours = remainingTime/3600 % 24
+			timerLabel.text = "\(numberOfHours)h \(numberOfMinutes)m \(numberOfSeconds)s"
+		} else {
+			runningTimer!.invalidate()
+			runningTimer = nil
+			timerLabel.text = "Start \(minutes)min timer"
+		}
+	}
+	
+	func timerDidTick(timer: NSTimer) {
+		let elapsedTime: NSTimeInterval = NSDate().timeIntervalSinceDate(startDate)
+		let remainingTime = Int(floor(totalCountdownInterval - elapsedTime))
+		
+		if (remainingTime <= 0) {
+			runningTimer!.invalidate()
+			runningTimer = nil
+			timerLabel.text = "Start \(minutes)min timer"
+			return
+		}
+		let numberOfSeconds = remainingTime % 60
+		let numberOfMinutes = remainingTime/60 % 60
+		minutes = numberOfMinutes
+		let numberOfHours = remainingTime/3600 % 24
+		timerLabel.text = "\(numberOfHours)h \(numberOfMinutes)m \(numberOfSeconds)s"
+	}
+	
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 		self.stepName.text = self.step!.name
-        if(step!.name == "Step 4") {
-            swipeLeft.text = ""
-        } else {
+        if step!.name == "Step 4" {
+            swipeLeft.text = "Done!"
+		} else if step!.name == "Step 1" {
+			swipeRight.text = ""
+		} else {
             swipeLeft.text = "Swipe left for next step"
+			swipeRight.text = "Swipe right for previous step"
         }
-        if(step!.name == "Step 1") {
-            swipeRight.text = ""
-        } else {
-            swipeRight.text = "Swipe right for previous step"
-        }
+		if(step!.name == "Step 3") {
+			timerButton.backgroundColor = UIColor.redColor()
+			timerLabel.text = "Start \(minutes)min timer"
+		} else {
+			timerButton.backgroundColor = UIColor.whiteColor()
+			timerLabel.text = ""
+		}
 		self.ingredients = self.getAllIngredientsNeeded(self.step!.rest)
     }
 	
@@ -109,8 +164,8 @@ class DataViewController: UIViewController, UITableViewDataSource {
 			let ingredient = self.ingredients![indexPath.item]
 			cell.name?.text = ingredient.name
 			cell.quantity?.text = "\(ingredient.quantity) " + ingredient.unit.rawValue
-			println(ingredient.color.description)
 			cell.backgroundColor = ingredient.color
+
 			return cell
 		}
 		
@@ -119,7 +174,10 @@ class DataViewController: UIViewController, UITableViewDataSource {
 		cell.name?.text = substep.name
 		cell.explanation?.text = substep.explanation
 		cell.time?.text = "\(substep.time) min"
-		cell.color.backgroundColor = substep.color
+		cell.color1.backgroundColor = substep.color1
+		cell.color2.backgroundColor = substep.color2
+		cell.color1.layer.cornerRadius = 20
+		cell.color2.layer.cornerRadius = 20
 		return cell
 	}
 }
