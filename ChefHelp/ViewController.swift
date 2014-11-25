@@ -17,7 +17,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 	var allRecipes: [Recipe] = []
 	var selectedRecipeIngredients: [Ingredient] = []
 	var selectedRecipe: Recipe?
-	var results: [[String]] = []
+	var results: [[[String]]] = []
 	
 	override init() {
 		super.init()
@@ -80,7 +80,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		
 		let eggs: Ingredient = Ingredient(name: "eggs", attributes: "", importance: Importance.MainIngredient, quantity: 3, unit: Unit.Whole, color: group2)
 		let oil: Ingredient = Ingredient(name: "oil", attributes: "vegetable", importance: Importance.MainIngredient, quantity: 0.75, unit: Unit.Cup, color: group2)
-		let vanilla: Ingredient = Ingredient(name: "vanilla", attributes: "", importance: Importance.SecondaryIngredient, quantity: 1, unit: Unit.TeaSpoon, color: group2)
+		let vanilla: Ingredient = Ingredient(name: "vanilla (cake)", attributes: "", importance: Importance.SecondaryIngredient, quantity: 1, unit: Unit.TeaSpoon, color: group2)
 		
 		let wetGroup: Group = Group(name: "wet elements", rest: [sugar, brownSugar, eggs, oil, vanilla])
 		
@@ -96,7 +96,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		
 		let creamCheese: Ingredient = Ingredient(name: "cream cheese", attributes: "softened", importance: Importance.MainIngredient, quantity: 250, unit: Unit.Gram, color: group4)
 		let butter: Ingredient = Ingredient(name: "butter", attributes: "soften", importance: Importance.MainIngredient, quantity: 0.25, unit: Unit.Cup, color: group4)
-		let vanilla2: Ingredient = Ingredient(name: "vanilla", attributes: "", importance: Importance.SecondaryIngredient, quantity: 0.5, unit: Unit.TeaSpoon, color: group5)
+		let vanilla2: Ingredient = Ingredient(name: "vanilla (icing)", attributes: "", importance: Importance.SecondaryIngredient, quantity: 0.5, unit: Unit.TeaSpoon, color: group5)
 		let icingSugar: Ingredient = Ingredient(name: "icing sugar", attributes: "", importance: Importance.MainIngredient, quantity: 1, unit: Unit.Cup, color: group6)
 		let icingGroup: Group = Group(name: "icing mix", rest: [creamCheese, butter, vanilla2, icingSugar])
 		
@@ -131,24 +131,30 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		self.allRecipes.append(carrotCakeRecipe)
 	}
 	
-	func filterContentForSearchText(searchText: String) {
+	func filterContentForSearchText(allText: String) {
 		self.results = []
-		// Filter the array using the filter method
+		let allKeywords = allText.componentsSeparatedByString(" ")
 		self.filteredRecipes = self.allRecipes.filter({( recipe: Recipe) -> Bool in
-			let stringMatch = recipe.name.rangeOfString(searchText)
-			let ingredientsMatch = self.generateIngredientList(recipe).filter({(ingredient: Ingredient) -> Bool in
-				return ingredient.name.rangeOfString(searchText) != nil && ingredient.importance == Importance.MainIngredient
-			})
-
-			if ingredientsMatch.count > 0 {
-				var arr: [String] = []
-				for i in ingredientsMatch {
-					arr.append("\(i.name)")
+			var atLeastOne = true
+			var arr: [[String]] = []
+			for searchText in allKeywords {
+				let stringMatch = recipe.name.rangeOfString(searchText)
+				let ingredientsMatch = self.generateIngredientList(recipe).filter({(ingredient: Ingredient) -> Bool in
+					return ingredient.name.rangeOfString(searchText) != nil
+				})
+				
+				if ingredientsMatch.count > 0 {
+					for i in ingredientsMatch {
+						let range = i.name.rangeOfString(searchText)!;
+						arr.append(["\(i.name.substringToIndex(range.startIndex))", "\(i.name.substringWithRange(range))", "\(i.name.substringFromIndex(range.endIndex))"])
+					}
 				}
-				self.results.append(arr)
+				atLeastOne = atLeastOne && stringMatch != nil || ingredientsMatch.count > 0
 			}
-			return stringMatch != nil || ingredientsMatch.count > 0
+			self.results.append(arr)
+			return atLeastOne
 		})
+		
 	}
 	func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchString searchString: String!) -> Bool {
 		self.filterContentForSearchText(searchString)
@@ -184,19 +190,33 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 			
 			cell.name?.text = self.filteredRecipes[indexPath.row].name
 			cell.time?.text = "\(self.getTime(self.filteredRecipes[indexPath.row])) min"
+			cell.preResult1?.text = ""
 			cell.result1?.text = ""
+			cell.postResult1?.text = ""
+			
+			cell.preResult2?.text = ""
 			cell.result2?.text = ""
+			cell.postResult2?.text = ""
+			
+			cell.preResult3?.text = ""
 			cell.result3?.text = ""
+			cell.postResult3?.text = ""
 			if(self.results[indexPath.row].count > 0) {
-				cell.result1?.text = "\(self.results[indexPath.row][0])"
+				cell.preResult1?.text = "\(self.results[indexPath.row][0][0])"
+				cell.result1?.text = "\(self.results[indexPath.row][0][1])"
+				cell.postResult1?.text = "\(self.results[indexPath.row][0][2])"
 			}
 			
 			if(self.results[indexPath.row].count > 1) {
-				cell.result2?.text = "\(self.results[indexPath.row][1])"
+				cell.preResult2?.text = "\(self.results[indexPath.row][1][0])"
+				cell.result2?.text = "\(self.results[indexPath.row][1][1])"
+				cell.postResult2?.text = "\(self.results[indexPath.row][1][2])"
 			}
 
 			if(self.results[indexPath.row].count > 2) {
-				cell.result3?.text = "\(self.results[indexPath.row][2])"
+				cell.preResult3?.text = "\(self.results[indexPath.row][2][0])"
+				cell.result3?.text = "\(self.results[indexPath.row][2][1])"
+				cell.postResult3?.text = "\(self.results[indexPath.row][2][2])"
 			}
 			
 			cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
