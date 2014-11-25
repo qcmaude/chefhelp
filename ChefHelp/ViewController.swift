@@ -132,22 +132,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 	}
 	
 	func filterContentForSearchText(searchText: String) {
+		self.results = []
 		// Filter the array using the filter method
 		self.filteredRecipes = self.allRecipes.filter({( recipe: Recipe) -> Bool in
 			let stringMatch = recipe.name.rangeOfString(searchText)
 			let ingredientsMatch = self.generateIngredientList(recipe).filter({(ingredient: Ingredient) -> Bool in
 				return ingredient.name.rangeOfString(searchText) != nil && ingredient.importance == Importance.MainIngredient
 			})
-			if stringMatch != nil || ingredientsMatch.count > 0 {
-				self.results += [["name: \(recipe.name)"]]
+
+			if ingredientsMatch.count > 0 {
+				var arr: [String] = []
+				for i in ingredientsMatch {
+					arr.append("\(i.name)")
+				}
+				self.results.append(arr)
 			}
-//			if stringMatch != nil || ingredientsMatch.count > 0 {
-//				var arr = []
-//				for i in ingredientsMatch {
-//					arr.add
-//				}
-//				results.append(arr)
-//			}
 			return stringMatch != nil || ingredientsMatch.count > 0
 		})
 	}
@@ -185,8 +184,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 			
 			cell.name?.text = self.filteredRecipes[indexPath.row].name
 			cell.time?.text = "\(self.getTime(self.filteredRecipes[indexPath.row])) min"
+			cell.result1?.text = ""
+			cell.result2?.text = ""
+			cell.result3?.text = ""
 			if(self.results[indexPath.row].count > 0) {
 				cell.result1?.text = "\(self.results[indexPath.row][0])"
+			}
+			
+			if(self.results[indexPath.row].count > 1) {
+				cell.result2?.text = "\(self.results[indexPath.row][1])"
+			}
+
+			if(self.results[indexPath.row].count > 2) {
+				cell.result3?.text = "\(self.results[indexPath.row][2])"
 			}
 			
 			cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
@@ -257,7 +267,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		switch tableView {
 		case self.searchDisplayController!.searchResultsTableView:
-			println("selected from search")
 			var cell:CustomRecipeCell = self.table.dequeueReusableCellWithIdentifier("recipes") as CustomRecipeCell
 			self.selectedRecipeIngredients = self.generateIngredientList(self.filteredRecipes[indexPath.item])
 			self.recipeTile.text = self.filteredRecipes[indexPath.item].name
